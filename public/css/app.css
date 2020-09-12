@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
-
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+@import url(https://fonts.googleapis.com/css2?family=Raleway&display=swap);
 /*!
  * Bootstrap v4.5.2 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -77,6 +77,11 @@ body {
 
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
+}
+
+.welcome{
+  margin-top: 5%;
+  font-family: 'Raleway', sans-serif;
 }
 
 hr {
@@ -2618,7 +2623,8 @@ textarea.form-control.is-invalid {
 .btn {
   display: inline-block;
   font-weight: 400;
-  color: #212529;
+  color: #ffffff;
+  text-transform: none;
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -2641,7 +2647,7 @@ textarea.form-control.is-invalid {
 }
 
 .btn:hover {
-  color: #212529;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -4408,8 +4414,10 @@ input[type=button].btn-block {
 }
 
 .nav-link {
+  color: #444b54!important;
   display: block;
   padding: 0.5rem 1rem;
+  font-weight: bold;
 }
 
 .nav-link:hover,
@@ -4521,6 +4529,8 @@ input[type=button].btn-block {
   font-size: 1.125rem;
   line-height: inherit;
   white-space: nowrap;
+  max-width: 40%;
+ 
 }
 
 .navbar-brand:hover,
