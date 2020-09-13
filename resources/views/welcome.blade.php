@@ -10,17 +10,17 @@
             
             <h3 class="text-secondary text-center animated zoomIn">Your Parcel Our Services</h3>
         </div>
-        <div class="col-md welcome animated zoomIn text-center text-secondary" style="margin-top:10%">
+        <div class="col-md welcome animated zoomIn text-center text-secondary" style="margin-top:12%">
             
             <h6>Welcome to</h6>
             <div class="row justify-content-center">
             
-                <h1 class="text-danger mb-4">iParcel</h1>
+                <h1 class="brown-text">iParcel</h1>
             </div>
-            
-            <p>An advanced online digital parcel service</p>
+        <img style="max-width:10%" src="{{asset('img/icon.png')}}" alt="">
+            <p style="margin-top:5%">An advanced online digital parcel service</p>
             <div class="row justify-content-center">
-                <button onclick="window.location.href='/login'" class="btn btn-indigo">LOGIN</button>
+                <button onclick="window.location.href='/login'" class="btn btn-unique">LOGIN</button>
                 <button onclick="window.location.href='/register'" class="btn btn-mdb-color">REGISTER</button>
             </div>
         </div>

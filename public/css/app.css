@@ -83,7 +83,15 @@ body {
   margin-top: 5%;
   font-family: 'Raleway', sans-serif;
 }
+a:hover{
+  text-decoration: none!important;
+}
 
+
+
+.raleway{
+  font-family: 'Raleway', sans-serif;
+}
 hr {
   box-sizing: content-box;
   height: 0;
@@ -473,6 +481,7 @@ mark,
 .list-unstyled {
   padding-left: 0;
   list-style: none;
+  
 }
 
 .list-inline {

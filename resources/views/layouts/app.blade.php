@@ -20,6 +20,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+    <script
+    src="https://kit.fontawesome.com/753fbd11bf.js"
+    crossorigin="anonymous"
+  ></script>
 </head>
 <body>
     <div id="app">
@@ -39,13 +43,14 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        @guest
+                       
                             <li class="nav-item">
                               <a class="nav-link" href="/services">{{ __('Services') }}</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" href="/about">{{ __('About') }}</a>
                             </li>
+                            @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
@@ -85,7 +90,7 @@
        <footer class="page-footer font-small mdb-color pt-4">
 
          <!-- Footer Links -->
-           <div class="container-fluid text-center text-md-left">
+           <div class="container-fluid text-center text-md-left" style="padding-bottom:5%!important;">
   
                     <!-- Grid row -->
                     <div class="row">
@@ -94,9 +99,20 @@
                         <div class="col-md-6 mt-md-0 mt-3">
                 
                         <!-- Content -->
-                        <img style="max-width:30%" src="{{asset('img/logo-white.png')}}" alt="">
-                        <p>Office Address : 73, Shantinagor,Dhaka 1217.</p>
-                        <p><i class="fas fa-phone-alt"></i> +88 01717272999</p>
+                        <img style="max-width:30%;margin-bottom:4%" src="{{asset('img/logo-white.png')}}" alt="">
+                        <ul class="list-unstyled text-small">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>&nbsp; 73, Shantinagor,Dhaka 1217
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>&nbsp; contact@iparcel.rf.gd
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>&nbsp; +88 0171-7272999
+                            </li>
+                            
+                        </ul>
+                        
                 
                         </div>
                         <!-- Grid column -->
@@ -107,21 +123,25 @@
                         <div class="col-md-3 mb-md-0 mb-3">
                 
                         <!-- Links -->
-                        <h5 class="text-uppercase">Links</h5>
+                        <h4 style="margin-bottom:12%">Links</h4>
                 
                         <ul class="list-unstyled">
+                           
                             <li>
-                            <a href="#!">Link 1</a>
+                              <a href="/services">Services</a>
                             </li>
                             <li>
-                            <a href="#!">Link 2</a>
+                              <a href="/about">About</a>
+                            </li>
+                            @guest
+                            <li>
+                              <a href="/login">Login</a>
                             </li>
                             <li>
-                            <a href="#!">Link 3</a>
+                              <a href="/register">Register</a>
                             </li>
-                            <li>
-                            <a href="#!">Link 4</a>
-                            </li>
+                           @endguest
+                            
                         </ul>
                 
                         </div>
@@ -131,20 +151,20 @@
                         <div class="col-md-3 mb-md-0 mb-3">
                 
                         <!-- Links -->
-                        <h5 class="text-uppercase">Links</h5>
+                        <h4 style="margin-bottom:12%">Social</h4>
                 
                         <ul class="list-unstyled">
                             <li>
-                            <a href="#!">Link 1</a>
+                            <a href="#!"><i class="fab fa-facebook"></i>&nbsp; facebook</a>
                             </li>
                             <li>
-                            <a href="#!">Link 2</a>
+                            <a href="#!"><i class="fab fa-twitter"></i>&nbsp; twitter</a>
                             </li>
                             <li>
-                            <a href="#!">Link 3</a>
+                            <a href="#!"><i class="fab fa-instagram"></i>&nbsp; instagram</a>
                             </li>
                             <li>
-                            <a href="#!">Link 4</a>
+                            <a href="#!"><i class="fab fa-youtube"></i>&nbsp; YouTube</a>
                             </li>
                         </ul>
                 
