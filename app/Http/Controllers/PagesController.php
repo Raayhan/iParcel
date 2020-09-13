@@ -18,4 +18,7 @@ class PagesController extends Controller
         
         return view('pages.services');
     }
+    public function CustomerLogin(){
+        return view('customer.login');
+    }
 }

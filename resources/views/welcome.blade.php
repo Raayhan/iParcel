@@ -10,7 +10,7 @@
             
             <h3 class="text-secondary text-center animated zoomIn">Your Parcel Our Services</h3>
         </div>
-        <div class="col-md welcome animated zoomIn text-center text-secondary" style="margin-top:12%">
+        <div class="col-md welcome animated zoomIn text-center text-secondary" style="margin-top:9%">
             
             <h6>Welcome to</h6>
             <div class="row justify-content-center">
