@@ -88,6 +88,11 @@ a:hover{
 }
 
 
+.MyButton{
+  padding-left: 7%!important;
+  padding-right: 7%!important;
+
+}
 
 .raleway{
   font-family: 'Raleway', sans-serif;
