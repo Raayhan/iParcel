@@ -19,9 +19,10 @@ Route::get('/services', [PagesController::class, 'services']);
 Route::get('/customer/login', [PagesController::class, 'CustomerLogin']);
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::group(['middleware' => 'prevent-back-history'],function(){
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');});
+
+Route::get('/customer/dashboard', [App\Http\Controllers\CustomerDashboardController::class, 'index'])->name('dashboard');});
