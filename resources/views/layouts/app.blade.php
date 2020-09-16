@@ -57,7 +57,7 @@
                           @if(Auth::guard('admin')->check())
                           <li class="nav-item dropdown">
                               <a id="adminDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                  {{ Auth::guard('admin')->user()->name }} (ADMIN) <span class="caret"></span>
+                                  {{ Auth::guard('admin')->user()->name }}<small> (ADMIN)</small> <span class="caret"></span>
                               </a>
                               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminDropdown">
                                   <a href="{{route('admin.dashboard')}}" class="dropdown-item">Dashboard</a>
@@ -77,7 +77,7 @@
                         @elseif(Auth::guard('web')->check())
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::guard('web')->user()->name }} <span class="caret"></span>
+                                {{ Auth::guard('web')->user()->name }}<small> (CUSTOMER)</small><span class="caret"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a href="{{route('dashboard')}}" class="dropdown-item">Dashboard</a>

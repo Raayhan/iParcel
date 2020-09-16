@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card raleway">
-                <div class="card-header text-center font-weight-bold"><i class="fas fa-lock"></i> &nbsp;{{ __('Customer Login') }}</div>
+                <div class="card-header text-center login-card"><i class="fas fa-unlock-alt"></i> &nbsp;{{ __('Customer Login') }}</div>
 
                 <div class="card-body" style="padding-top:10%;padding-bottom:10%;">
                             {{-- Success Alert --}}
@@ -27,9 +27,13 @@
                                 </button>
                             </div>
                         @endif
+                         <div class="row justify-content-center" style="margin-bottom:8%;">
+                            <i class="fas fa-users fa-3x text-center"></i>
+                        </div> 
+                        
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
+                        
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 

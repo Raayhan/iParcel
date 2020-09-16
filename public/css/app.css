@@ -87,7 +87,14 @@ a:hover{
   text-decoration: none!important;
 }
 
+.login-card{
+  background-color: #45526e!important;
+  color:white;
+  
+  
 
+  
+}
 .MyButton{
   padding-left: 7%!important;
   padding-right: 7%!important;
