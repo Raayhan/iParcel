@@ -42,10 +42,10 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
     
 
  
-Auth::routes();
+
+Auth::routes();   
     
-    
-Route::get('/customer/dashboard', [App\Http\Controllers\CustomerDashboardController::class, 'index'])->name('dashboard');
+Route::get('/customer/dashboard', [App\Http\Controllers\CustomerDashboardController::class, 'index'])->middleware('customer')->name('dashboard');
 
 
 

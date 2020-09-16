@@ -8,6 +8,25 @@
                 <div class="card-header text-center font-weight-bold"><i class="fas fa-lock"></i> &nbsp;{{ __('Customer Login') }}</div>
 
                 <div class="card-body" style="padding-top:10%;padding-bottom:10%;">
+                            {{-- Success Alert --}}
+                            @if(session('status'))
+                            <div class="alert alert-success alert-dismissible fade show text-center font-weight-bold" role="alert">
+                                {{session('status')}}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
+
+                        {{-- Error Alert --}}
+                        @if(session('error'))
+                            <div class="alert alert-danger alert-dismissible fade show text-center font-weight-bold" role="alert">
+                                {{session('error')}}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 

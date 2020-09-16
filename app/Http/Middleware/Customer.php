@@ -5,7 +5,7 @@ use Auth;
 use Closure;
 use Illuminate\Http\Request;
 
-class Admin
+class Customer
 {
     /**
      * Handle an incoming request.
@@ -16,10 +16,9 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::guard('admin')->check()){
+        if(Auth::guard('web')->check()){
             return $next($request);
-          }
-
-    return redirect('/admin/login')->with('error',"You must login to access Admin Panel");
+        }
+        return redirect('/customer/login')->with('error',"You must login to access Customer Panel");
     }
 }
