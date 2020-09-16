@@ -17,12 +17,38 @@ Route::get('/',[PagesController::class, 'index']);
 Route::get('/about', [PagesController::class, 'about']);
 Route::get('/services', [PagesController::class, 'services']);
 Route::get('/customer/login', [PagesController::class, 'CustomerLogin']);
-Auth::routes();
 
 
-
+        
+   
 Route::group(['middleware' => 'prevent-back-history'],function(){
+ 
+   
+    
+  Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
+    
+    
+      Route::get('/dashboard',[App\Http\Controllers\AdminDashboardController::class,'index'])->middleware('admin')->name('dashboard');
+  
+    
+  
+    
+    
+    //Login Routes
+    Route::get('/login',[App\Http\Controllers\Admin\Auth\LoginController::class,'showLoginForm'])->name('login');
+    Route::post('/login',[App\Http\Controllers\Admin\Auth\LoginController::class,'login']);
+    Route::post('/logout',[App\Http\Controllers\Admin\Auth\LoginController::class,'logout'])->name('logout');
+  });
+    
+
+ 
 Auth::routes();
+    
+    
+Route::get('/customer/dashboard', [App\Http\Controllers\CustomerDashboardController::class, 'index'])->name('dashboard');
 
 
-Route::get('/customer/dashboard', [App\Http\Controllers\CustomerDashboardController::class, 'index'])->name('dashboard');});
+
+
+
+});

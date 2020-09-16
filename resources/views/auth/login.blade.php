@@ -84,7 +84,7 @@
         <!--Text-->
         <p class="card-text raleway text-center"><small>Login with admin account in order to manage Admin services</small></p>
         <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-        <button type="button" class="btn btn-mdb-color btn-block">Login</button>
+        <a href="/admin/login" type="button" class="btn btn-mdb-color btn-block">Login</a>
   
       </div>
   
