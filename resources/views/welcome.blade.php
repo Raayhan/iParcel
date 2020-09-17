@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('pagetitle', 'Welcome')
 @section('content')
-<div class="container" style="height:70vh">
+<div class="container front-panel">
     <div class="row justify-content-center">
         <div class="col-md welcome">
             <div class="row justify-content-center">

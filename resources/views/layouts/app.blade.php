@@ -119,104 +119,130 @@
             @yield('content')
         </main>
         <!-- Footer -->
-       <footer class="page-footer font-small mdb-color pt-4">
+<footer class="page-footer font-small mdb-color">
 
-         <!-- Footer Links -->
-           <div class="container-fluid text-center text-md-left" style="padding-bottom:5%!important;">
+    <!-- Footer Links -->
+    <div class="container">
   
-                    <!-- Grid row -->
-                    <div class="row">
-                
-                        <!-- Grid column -->
-                        <div class="col-md-6 mt-md-0 mt-3">
-                
-                        <!-- Content -->
-                        <img style="max-width:30%;margin-bottom:4%" src="{{asset('img/logo-white.png')}}" alt="">
-                        <ul class="list-unstyled text-small">
-                            <li>
-                                <i class="fas fa-map-marker-alt"></i>&nbsp; 73, Shantinagor,Dhaka 1217
-                            </li>
-                            <li>
-                                <i class="fas fa-envelope"></i>&nbsp; contact@iparcel.rf.gd
-                            </li>
-                            <li>
-                                <i class="fas fa-phone-alt"></i>&nbsp; +88 0171-7272999
-                            </li>
-                            
-                        </ul>
-                        
-                
-                        </div>
-                        <!-- Grid column -->
-                
-                        <hr class="clearfix w-100 d-md-none pb-3">
-                
-                        <!-- Grid column -->
-                        <div class="col-md-3 mb-md-0 mb-3">
-                
-                        <!-- Links -->
-                        <h4 style="margin-bottom:12%">Links</h4>
-                
-                        <ul class="list-unstyled">
-                           
-                            <li>
-                              <a href="/services">Services</a>
-                            </li>
-                            <li>
-                              <a href="/about">About</a>
-                            </li>
-                            @guest
-                            <li>
-                              <a href="/login">Login</a>
-                            </li>
-                            <li>
-                              <a href="/register">Register</a>
-                            </li>
-                           @endguest
-                            
-                        </ul>
-                
-                        </div>
-                        <!-- Grid column -->
-                
-                        <!-- Grid column -->
-                        <div class="col-md-3 mb-md-0 mb-3">
-                
-                        <!-- Links -->
-                        <h4 style="margin-bottom:12%">Social</h4>
-                
-                        <ul class="list-unstyled">
-                            <li>
-                            <a href="#!"><i class="fab fa-facebook"></i>&nbsp; facebook</a>
-                            </li>
-                            <li>
-                            <a href="#!"><i class="fab fa-twitter"></i>&nbsp; twitter</a>
-                            </li>
-                            <li>
-                            <a href="#!"><i class="fab fa-instagram"></i>&nbsp; instagram</a>
-                            </li>
-                            <li>
-                            <a href="#!"><i class="fab fa-youtube"></i>&nbsp; YouTube</a>
-                            </li>
-                        </ul>
-                
-                        </div>
-                        <!-- Grid column -->
-                
-                    </div>
-                    <!-- Grid row -->
+      <!-- Grid row-->
+      <div class="row text-center d-flex justify-content-center pt-5 mb-3">
   
-                </div>
-                <!-- Footer Links -->
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="/services">Services</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="/about">About</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="#!">News</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="#!">Help</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="#!">Contact</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row-->
+      <hr class="rgba-white-light" style="margin: 0 15%;">
+  
+      <!-- Grid row-->
+      <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+  
+        <!-- Grid column -->
+        <div class="row justify-content-center" style="margin-top:2%;">
+          <div class="col">
+            <img style="max-width:10%;" src="{{asset('img/logo-white.png')}}" alt=""><br>
+            <small>© 2020 Copyright : iParcel Inc.</small>
+          </div>
+         
+        </div>
+        <div class="col-md-8 col-12 mt-5">
             
-                <!-- Copyright -->
-                <div class="footer-copyright text-center py-3">© 2020 Developed & Maintained by:
-                <a href="https://raayhan.github.io/" target="_blank">Rayhan Ahmed Rakib </a>
-                </div>
-                <!-- Copyright -->
-            
-            </footer>
-            <!-- Footer -->
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row-->
+      <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+  
+      <!-- Grid row-->
+      <div class="row pb-3">
+  
+        <!-- Grid column -->
+        <div class="col-md-12">
+  
+          <div class="mb-5 flex-center">
+  
+            <!-- Facebook -->
+            <a class="fb-ic">
+              <i class="fab fa-facebook-f fa-lg white-text mr-4"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic">
+              <i class="fab fa-twitter fa-lg white-text mr-4"> </i>
+            </a>
+            <!-- Google +-->
+            <a class="gplus-ic">
+              <i class="fab fa-google-plus-g fa-lg white-text mr-4"> </i>
+            </a>
+            <!--Linkedin -->
+            <a class="li-ic">
+              <i class="fab fa-youtube fa-lg white-text mr-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fab fa-instagram fa-lg white-text mr-4"> </i>
+            </a>
+            <!--Pinterest-->
+            <a class="pin-ic">
+              <i class="fab fa-pinterest fa-lg white-text"> </i>
+            </a>
+  
+          </div>
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row-->
+  
+    </div>
+    <!-- Footer Links -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
     </div>
 </body>
 </html>
