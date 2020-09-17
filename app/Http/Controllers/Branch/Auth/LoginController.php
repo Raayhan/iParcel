@@ -16,11 +16,19 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
+        if((Auth::guard('branch')->check())){
+            return redirect()
+            ->intended(route('branch.dashboard'))
+            ->with('status','You are already logged in as Branch!');
+    }
+    else{
         return view('branch.login',[
             
             'loginRoute' => 'branch.login',
            
         ]);
+    }
+
     }
 
     /**

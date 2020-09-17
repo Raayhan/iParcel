@@ -10,6 +10,12 @@ class PagesController extends Controller
         if(Auth::check()) {
             return view('customer.dashboard');
         }
+        elseif((Auth::guard('branch')->check())){
+            return view('branch.dashboard');
+        }
+        elseif((Auth::guard('admin')->check())){
+            return view('admin.dashboard');
+        }
         else{
             return view('welcome');
         } 
@@ -25,12 +31,13 @@ class PagesController extends Controller
         return view('pages.services');
     }
     public function CustomerLogin(){
-        return view('customer.login');
+        if(Auth::check()) {
+            return view('customer.dashboard');
+        }
+        else{
+            return view('customer.login');
+        }
+       
     }
-    public function AdminLogin(){
-        return view('admin.login');
-    }
-    public function BranchLogin(){
-        return view('branch.login');
-    }
+    
 }
