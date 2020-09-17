@@ -30,5 +30,7 @@ class PagesController extends Controller
     public function AdminLogin(){
         return view('admin.login');
     }
-   
+    public function BranchLogin(){
+        return view('branch.login');
+    }
 }

@@ -51,10 +51,24 @@
                           </li>
                         
                           <!-- Authentication Links -->
-
+                          @if(Auth::guard('branch')->check())
+                          <li class="nav-item dropdown">
+                              <a id="adminDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                  {{ Auth::guard('branch')->user()->name }}<small> (BRANCH)</small> <span class="caret"></span>
+                              </a>
+                              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminDropdown">
+                                  <a href="{{route('branch.dashboard')}}" class="dropdown-item">Dashboard</a>
+                                  <a class="dropdown-item" href="#" onclick="event.preventDefault();document.querySelector('#branch-logout-form').submit();">
+                                      Logout
+                                  </a>
+                                  <form id="branch-logout-form" action="{{ route('branch.logout') }}" method="post" style="display: none;">
+                                      @csrf
+                                  </form>
+                              </div>
+                          </li>
 
                           
-                          @if(Auth::guard('admin')->check())
+                          @elseif(Auth::guard('admin')->check())
                           <li class="nav-item dropdown">
                               <a id="adminDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                   {{ Auth::guard('admin')->user()->name }}<small> (ADMIN)</small> <span class="caret"></span>
@@ -236,8 +250,8 @@
     <!-- Footer Links -->
   
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-      <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    <div class="footer-copyright text-center py-3">© Developed & Maintained by :
+      <a target="_BLANK" href="https://raayhan.github.io/">© Rayhan Ahmed</a>
     </div>
     <!-- Copyright -->
   

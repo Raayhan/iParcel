@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('pagetitle', 'Admin Login')
+@section('pagetitle', 'Branch Login')
 @section('content')
 <div class="container">
     
@@ -7,7 +7,7 @@
         
         <div class="col-md-8">
             <div class="card raleway">
-                <div class="card-header text-center login-card"><i class="fas fa-unlock-alt"></i> &nbsp;{{ __('Admin Login') }}</div>
+                <div class="card-header text-center login-card"><i class="fas fa-unlock-alt"></i> &nbsp;{{ __('Branch Login') }}</div>
                 <div class="card-body" style="padding-top:10%;padding-bottom:10%;">
                         {{-- Success Alert --}}
                         @if(session('status'))
@@ -29,8 +29,9 @@
                              </div>
                         @endif
                         <div class="row justify-content-center" style="margin-bottom:8%;">
-                            <i class="fas fa-user-secret fa-3x text-center"></i>
+                            <i class="fas fa-user-tie fa-3x text-center"></i>
                         </div> 
+                    
                     <form method="POST" action="{{ route($loginRoute) }}">
                         @csrf
                         <div class="form-group row">
@@ -74,6 +75,11 @@
                                     {{ __('Login') }}
                                 </button>
                               
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link font-weight-bold" href="{{ route('password.request') }}"><small>
+                                        {{ __('Forgot Your Password?') }}</small>
+                                    </a>
+                                @endif
                             </div>
                         </div>
                     </form>

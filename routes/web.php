@@ -19,10 +19,21 @@ Route::get('/services', [PagesController::class, 'services']);
 Route::get('/customer/login', [PagesController::class, 'CustomerLogin']);
 
 
+
         
    
 Route::group(['middleware' => 'prevent-back-history'],function(){
  
+  Route::prefix('/branch')->name('branch.')->namespace('Branch')->group(function(){
+
+    Route::get('/dashboard',[App\Http\Controllers\Branch\DashboardController::class,'index'])->name('dashboard');
+   
+    //Login Routes
+    Route::get('/login',[App\Http\Controllers\Branch\Auth\LoginController::class,'showLoginForm'])->name('login');
+    Route::post('/login',[App\Http\Controllers\Branch\Auth\LoginController::class,'login']);
+    Route::post('/logout',[App\Http\Controllers\Branch\Auth\LoginController::class,'logout'])->name('logout');
+  
+  });
    
     
   Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){

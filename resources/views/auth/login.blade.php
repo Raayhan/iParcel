@@ -57,7 +57,7 @@
         <!--Text-->
         <p class="card-text raleway text-center"><small>Login with Branch account in order to manage Branch services</small></p>
         <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-        <button type="button" class="btn btn-unique btn-block">Login</button>
+        <a href="/branch/login" type="button" class="btn btn-unique btn-block">Login</a>
   
       </div>
   
