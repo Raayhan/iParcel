@@ -10364,7 +10364,7 @@
     padding: 0.5rem 1rem;
     margin: 0 0.5rem;
     display: block;
-    color: #3a3b45;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 0.35rem;
     white-space: nowrap;
@@ -10373,6 +10373,7 @@
   .sidebar .nav-item .collapse .collapse-inner .collapse-item:hover,
   .sidebar .nav-item .collapsing .collapse-inner .collapse-item:hover {
     background-color: #eaecf4;
+    color:black;
   }
   
   .sidebar .nav-item .collapse .collapse-inner .collapse-item:active,
@@ -10423,8 +10424,8 @@
   .sidebar .sidebar-brand {
     height: 4.375rem;
     text-decoration: none;
-    font-size: 1rem;
-    font-weight: 800;
+    font-size: 0.8rem;
+    font-weight: 500;
     padding: 1.5rem 1rem;
     text-align: center;
     text-transform: uppercase;

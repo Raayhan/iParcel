@@ -15,9 +15,9 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/dashboard">
         <div class="sidebar-brand-icon">
-          <i class="fas fa-user-secret"></i>
+          <i class="fas fa-user-secret fa-sm"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Admin Panel</div>
+        <div class="sidebar-brand-text mx-3">Control Panel</div>
       </a>
 
       <!-- Divider -->
@@ -35,20 +35,21 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Interface
+        Manage
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
+          <i class="fas fa-fw fa-code-branch"></i>
+          <span>Branch</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
-            <a class="collapse-item" href="cards.html">Cards</a>
+          <div class="py-2 collapse-inner rounded">
+            
+            <a class="collapse-item" href="#"><i class="fas fa-list-ul"></i> &nbsp;All Branches</a>
+            <a class="collapse-item" href="#"><i class="fas fa-calendar-plus"></i> &nbsp;New Branch</a>
+            
           </div>
         </div>
       </li>
@@ -56,16 +57,16 @@
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
+          <i class="fas fa-fw fa-users"></i>
+          <span>Customer</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
-            <a class="collapse-item" href="utilities-border.html">Borders</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
+          <div class=" py-2 collapse-inner rounded">
+            
+            <a class="collapse-item" href="#">All Customers</a>
+            <a class="collapse-item" href="#">Add a Customer</a>
+            <a class="collapse-item" href="#">Remove a Customer</a>
+            
           </div>
         </div>
       </li>
@@ -75,17 +76,17 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Addons
+        Operations
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+          <i class="fas fa-dolly-flatbed"></i>
+          <span>Shipments</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
+          <div class=" py-2 collapse-inner rounded">
             <h6 class="collapse-header">Login Screens:</h6>
             <a class="collapse-item" href="login.html">Login</a>
             <a class="collapse-item" href="register.html">Register</a>
@@ -434,15 +435,7 @@
       </div>
       <!-- End of Main Content -->
 
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
+     
 
     </div>
     <!-- End of Content Wrapper -->
