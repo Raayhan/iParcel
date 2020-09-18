@@ -105,7 +105,7 @@ class LoginController extends Controller
         return redirect()
         ->back()
         ->withInput()
-        ->with('error','Login failed, please try again!');
+        ->with('error','Authentication failed, please try again!');
         
     }
 }

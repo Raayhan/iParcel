@@ -4,10 +4,16 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <div class="card raleway">
+                <div class="card-header text-center login-card"><i class="fas fa-user-plus"></i> &nbsp; {{ __('Customer Register') }}</div>
 
                 <div class="card-body">
+                    <div class="alert alert-info alert-dismissible fade show text-center font-weight-bold" role="alert">
+                        <small>Register facilities available for 'Customer' accounts only.</small>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -63,7 +69,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-unique MyButton">
                                     {{ __('Register') }}
                                 </button>
                             </div>

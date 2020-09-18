@@ -79,6 +79,10 @@ body {
   outline: 0 !important;
 }
 
+.navbar.navbar-light .navbar-nav .nav-item .nav-link{
+  color:#444b54;
+  font-weight: bold;
+}
 .welcome{
   margin-top: 5%;
   font-family: 'Raleway', sans-serif;
@@ -4437,10 +4441,10 @@ input[type=button].btn-block {
 }
 
 .nav-link {
-  color: #444b54!important;
+  color: #444b54;
   display: block;
   padding: 0.5rem 1rem;
-  font-weight: bold;
+  
 }
 
 .nav-link:hover,

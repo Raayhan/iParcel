@@ -10,14 +10,20 @@
     <title>{{ config('app.name', 'iParcel') }} | @yield('pagetitle')</title>
     <link rel="icon" href="{{ asset('img/icon.png')}}" type="image/x-icon">
     <!-- Scripts -->
+    <script src="{{asset('js/vendor/jquery.min.js')}}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    
     <!-- Styles -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    
+    @yield('styles')
+      
+   
+    
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
     <script
@@ -129,7 +135,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
         <!-- Footer -->
@@ -251,12 +257,13 @@
   
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© Developed & Maintained by :
-      <a target="_BLANK" href="https://raayhan.github.io/">© Rayhan Ahmed</a>
+      <a target="_BLANK" href="https://raayhan.github.io/">© Rayhan Ahmed Rakib</a>
     </div>
     <!-- Copyright -->
   
   </footer>
   <!-- Footer -->
     </div>
+    @yield('scripts')
 </body>
 </html>
