@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('pagetitle', 'Customer Login')
 @section('content')
-<div class="container">
+<div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card raleway">
@@ -89,7 +89,7 @@
                         </div>
                         <div class="form-group row mb-0">
                             <div class="col-sm-4 offset-sm-4">
-                              <a class="btn btn-sm text-dark btn-outline-primary waves-effect font-weight-bold" href="#"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> &nbsp;&nbsp;Sign in with Google&nbsp;&nbsp;</a> 
+                              <a class="btn btn-sm text-dark btn-outline-primary waves-effect font-weight-bold" onclick="window.location.href='/auth/google'" ><img src="https://img.icons8.com/color/16/000000/google-logo.png"> &nbsp;&nbsp;Sign in with Google&nbsp;&nbsp;</a> 
                             </div>
                         </div>
                         <div class="form-group row">

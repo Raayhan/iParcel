@@ -149,41 +149,41 @@
   
         <!-- Grid column -->
         <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase font-weight-bold">
+          <span class="text-uppercase font-weight-bold small">
             <a href="/services">Services</a>
-          </h6>
+          </span>
         </div>
         <!-- Grid column -->
   
         <!-- Grid column -->
         <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase font-weight-bold">
+          <span class="text-uppercase font-weight-bold small">
             <a href="/about">About</a>
-          </h6>
+          </span>
         </div>
         <!-- Grid column -->
   
         <!-- Grid column -->
         <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase font-weight-bold">
-            <a href="#!">News</a>
-          </h6>
-        </div>
-        <!-- Grid column -->
-  
-        <!-- Grid column -->
-        <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase font-weight-bold">
-            <a href="#!">Help</a>
-          </h6>
-        </div>
-        <!-- Grid column -->
-  
-        <!-- Grid column -->
-        <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase font-weight-bold">
+          <span class="text-uppercase font-weight-bold small">
             <a href="#!">Contact</a>
-          </h6>
+          </span>
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <span class="text-uppercase font-weight-bold small">
+            <a href="#!">Privacy Policy</a>
+          </span>
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <span class="text-uppercase font-weight-bold small">
+            <a href="#!">Terms of Service</a>
+          </span>
         </div>
         <!-- Grid column -->
   

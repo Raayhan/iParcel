@@ -29,5 +29,10 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'google' => [
+        'client_id' => '759606228897-gmakid5tmb0hf76796cd0tjugbmhdqu0.apps.googleusercontent.com',
+        'client_secret' => 'CyYDyqLAw7QJWm3owR19DFbb',
+        'redirect' => 'http://parcel.com/auth/google/callback',
+    ],
 
 ];

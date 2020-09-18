@@ -57,6 +57,8 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
 Auth::routes();   
     
 Route::get('/customer/dashboard', [App\Http\Controllers\CustomerDashboardController::class, 'index'])->middleware('customer')->name('dashboard');
+Route::get('/auth/google', [App\Http\Controllers\Auth\GoogleController::class, 'redirectToGoogle']);
+Route::get('/auth/google/callback', [App\Http\Controllers\Auth\GoogleController::class, 'handleGoogleCallback']);
 
 
 
