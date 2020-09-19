@@ -27,7 +27,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="/admin/dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+          <span>DASHBOARD</span></a>
       </li>
 
       <!-- Divider -->
@@ -42,13 +42,13 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-code-branch"></i>
-          <span>Branch</span>
+          <span>BRANCH</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="py-2 collapse-inner rounded">
             
             <a class="collapse-item" href="#"><i class="fas fa-list-ul"></i> &nbsp;All Branches</a>
-            <a class="collapse-item" href="#"><i class="fas fa-calendar-plus"></i> &nbsp;New Branch</a>
+            <a class="collapse-item" href="#"><i class="fas fa-calendar-plus"></i> &nbsp;Add Branch</a>
             
           </div>
         </div>
@@ -58,14 +58,14 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-users"></i>
-          <span>Customer</span>
+          <span>CUSTOMER</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class=" py-2 collapse-inner rounded">
             
-            <a class="collapse-item" href="#">All Customers</a>
-            <a class="collapse-item" href="#">Add a Customer</a>
-            <a class="collapse-item" href="#">Remove a Customer</a>
+            <a class="collapse-item" href="#"><i class="fas fa-list-ul"></i> &nbsp;All Customers</a>
+            <a class="collapse-item" href="#"><i class="fas fa-user-plus"></i> &nbsp;Add Customer</a>
+            <a class="collapse-item" href="#"><i class="fas fa-user-minus"></i> &nbsp;Remove Customer</a>
             
           </div>
         </div>
@@ -83,11 +83,11 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-dolly-flatbed"></i>
-          <span>Shipments</span>
+          <span>SHIPMENTS</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class=" py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
+           
             <a class="collapse-item" href="login.html">Login</a>
             <a class="collapse-item" href="register.html">Register</a>
             <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
