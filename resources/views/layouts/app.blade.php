@@ -191,23 +191,7 @@
       <!-- Grid row-->
       <hr class="rgba-white-light" style="margin: 0 15%;">
   
-      <!-- Grid row-->
-      <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
-  
-        <!-- Grid column -->
-        <div class="row justify-content-center" style="margin-top:2%;">
-          <div class="col">
-            <img style="max-width:10%;" src="{{asset('img/logo-white.png')}}" alt=""><br>
-            <small>© 2020 Copyright : iParcel Inc.</small>
-          </div>
-         
-        </div>
-        <div class="col-md-8 col-12 mt-5">
-            
-        </div>
-        <!-- Grid column -->
-  
-      </div>
+   
       <!-- Grid row-->
       <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
   
@@ -256,7 +240,12 @@
     <!-- Footer Links -->
   
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© Developed & Maintained by :
+    <div class="footer-copyright text-center py-3">
+      <div class="row justify-content-center">
+        <img class="footer-logo" src="{{asset('img/logo-white.png')}}" alt="">
+       
+      </div>
+      © Developed & Maintained by :
       <a target="_BLANK" href="https://raayhan.github.io/">© Rayhan Ahmed Rakib</a>
     </div>
     <!-- Copyright -->

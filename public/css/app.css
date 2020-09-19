@@ -96,11 +96,16 @@ a:hover{
   color:white;
 }
   
+.footer-logo{
+  max-width: 6%;
+}
 .front-panel{
   height:80vh;
 }
   
-
+.footer-copyright{
+  font-size: .7rem!important;
+}
 .MyButton{
   padding-left: 7%!important;
   padding-right: 7%!important;

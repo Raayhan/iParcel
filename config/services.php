@@ -34,5 +34,12 @@ return [
         'client_secret' => 'CyYDyqLAw7QJWm3owR19DFbb',
         'redirect' => 'http://parcel.com/auth/google/callback',
     ],
+    
+    'linkedin' => [
+        'client_id' => '86s0bw6kb2jyy3',
+        'client_secret' => 'oip2uOrIpfi0tNzg',
+        'redirect' => 'http://parcel.com/auth/linkedin/callback',
+    ],
+
 
 ];

@@ -94,7 +94,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-4 offset-sm-4">
-                                <a class="btn btn-sm text-dark btn-outline-primary waves-effect font-weight-bold" href="#"><img src="https://img.icons8.com/color/16/000000/facebook-new.png"> Sign in with Facebook</a> 
+                                <a class="btn btn-sm text-dark btn-outline-primary waves-effect font-weight-bold" onclick="window.location.href='/auth/linkedin'"><img src=https://img.icons8.com/fluent/16/000000/linkedin.png> &nbsp;&nbsp;Sign in with Linkedin</a> 
                               </div>
                             
                         </div>

@@ -60,6 +60,8 @@ Route::get('/customer/dashboard', [App\Http\Controllers\CustomerDashboardControl
 Route::get('/auth/google', [App\Http\Controllers\Auth\GoogleController::class, 'redirectToGoogle']);
 Route::get('/auth/google/callback', [App\Http\Controllers\Auth\GoogleController::class, 'handleGoogleCallback']);
 
+Route::get('/auth/linkedin', [App\Http\Controllers\Auth\LinkedinController::class, 'redirectToLinkedin']);
+Route::get('/auth/linkedin/callback', [App\Http\Controllers\Auth\LinkedinController::class, 'handleLinkedinCallback']);
 
 
 
