@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[PagesController::class, 'index']);
 Route::get('/about', [PagesController::class, 'about']);
 Route::get('/services', [PagesController::class, 'services']);
-Route::get('/customer/login', [PagesController::class, 'CustomerLogin']);
+Route::get('/customer/login', [PagesController::class, 'CustomerLogin'])->name('customer.login');
 
 
 
