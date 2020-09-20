@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'iParcel') }} | @yield('pagetitle')</title>
     <link rel="icon" href="{{ asset('img/icon.png')}}" type="image/x-icon">
     <!-- Scripts -->
-    <script src="{{asset('js/vendor/jquery.min.js')}}"></script>
+    <script src="{{asset('js/vendor/jquery.js')}}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
