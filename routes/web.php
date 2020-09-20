@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +27,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
  
   Route::prefix('/branch')->name('branch.')->namespace('Branch')->group(function(){
 
-    Route::get('/dashboard',[App\Http\Controllers\Branch\DashboardController::class,'index'])->name('dashboard');
+    Route::get('/dashboard',[App\Http\Controllers\Branch\DashboardController::class,'index'])->middleware('branch')->name('dashboard');
    
     //Login Routes
     Route::get('/login',[App\Http\Controllers\Branch\Auth\LoginController::class,'showLoginForm'])->name('login');
