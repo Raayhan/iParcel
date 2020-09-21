@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Customer;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AdminDashboardController extends Controller
+class DashboardController extends Controller
 {
-   
-
-
     /**
      * Show the application dashboard.
      *
@@ -16,6 +14,6 @@ class AdminDashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        return view('customer.dashboard');
     }
 }

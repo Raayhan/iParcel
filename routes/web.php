@@ -40,9 +40,9 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
   Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     
     
-      Route::get('/dashboard',[App\Http\Controllers\AdminDashboardController::class,'index'])->middleware('admin')->name('dashboard');
-  
-    
+      Route::get('/dashboard',[App\Http\Controllers\Admin\DashboardController::class,'index'])->middleware('admin')->name('dashboard');
+      Route::get('/branch/branches',[App\Http\Controllers\PagesController::class,'AllBranches'])->middleware('admin')->name('branches');
+      Route::get('/branch/add',[App\Http\Controllers\PagesController::class,'AddBranch'])->middleware('admin')->name('addbranch');
   
     
     
@@ -57,7 +57,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
 
 Auth::routes();   
     
-Route::get('/customer/dashboard', [App\Http\Controllers\CustomerDashboardController::class, 'index'])->middleware('customer')->name('dashboard');
+Route::get('/customer/dashboard', [App\Http\Controllers\Customer\DashboardController::class, 'index'])->middleware('customer')->name('dashboard');
 Route::get('/auth/google', [App\Http\Controllers\Auth\GoogleController::class, 'redirectToGoogle']);
 Route::get('/auth/google/callback', [App\Http\Controllers\Auth\GoogleController::class, 'handleGoogleCallback']);
 
