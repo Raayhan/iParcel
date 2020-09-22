@@ -144,12 +144,12 @@
                 <table id="example" class="table table-striped table-bordered" style="width:100%;text-align:center!important;">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Branch ID</th>
+                            <th>Branch</th>
+                            <th>ID</th>
                             <th>Zone</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>Complete <i class="far fa-check-circle"></i></th>
+                            <th>Completed <i class="far fa-check-circle"></i></th>
                             <th>Pending <i class="far fa-clock"></i></th>
                             <th>Earnings</th>
                         </tr>
@@ -189,12 +189,12 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                          <th>Name</th>
-                          <th>Branch ID</th>
+                          <th>Branch</th>
+                          <th>ID</th>
                           <th>Zone</th>
                           <th>Email</th>
                           <th>Phone</th>
-                          <th>Complete <i class="far fa-check-circle"></i></th>
+                          <th>Completed <i class="far fa-check-circle"></i></th>
                           <th>Pending <i class="far fa-clock"></i></th>
                           <th>Earnings</th>
                         </tr>

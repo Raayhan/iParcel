@@ -91,6 +91,11 @@ a:hover{
   text-decoration: none!important;
 }
 
+.branch_add{
+  padding-left:10%!important;
+  padding-right:10%!important;
+}
+
 .dataTables_wrapper .dataTables_paginate .paginate_button.current,
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
   background: rgb(46, 85, 199)!important;

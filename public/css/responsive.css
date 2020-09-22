@@ -12,6 +12,10 @@
     .collapse-item{
       color:black!important;
     }
+    .branch_add{
+      padding-left:3%!important;
+      padding-right:3%!important;
+    }
   }
 @media screen and (max-width:550px) and (max-height: 800px) {
 .front-panel{
