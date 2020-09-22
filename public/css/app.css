@@ -91,6 +91,12 @@ a:hover{
   text-decoration: none!important;
 }
 
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  background: rgb(46, 85, 199)!important;
+color:white!important;
+}
+
 .login-card{
   background-color: #45526e!important;
   color:white;

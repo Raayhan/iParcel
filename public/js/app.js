@@ -1,3 +1,5 @@
+
+
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -104,6 +106,7 @@ module.exports = __webpack_require__(/*! ./lib/axios */ "./node_modules/axios/li
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+  
 "use strict";
 
 
@@ -153,6 +156,10 @@ module.exports = function xhrAdapter(config) {
         return;
       }
 
+      $(document).ready(function () {
+        $('#dtBasicExample').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+        });
       // Prepare the response
       var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
       var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;

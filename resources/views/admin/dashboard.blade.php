@@ -285,7 +285,7 @@
 
 
 @section('scripts')
-   
+    <script src="{{asset('js/vendor/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/vendor/admin.js')}}"></script>
     <script src="{{asset('js/vendor/Chart.js')}}"></script>
     <script src="{{asset('js/vendor/chart-bar-demo.js')}}"></script>
