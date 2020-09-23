@@ -130,53 +130,90 @@
          <div class="container-fluid py-4">
   
           <!-- Page Heading -->
-          <h4 class="h4 mb-4 text-gray-800 text-center">Branch Registration</h4>
+          <h4 class="h4 mb-4 text-gray-800 text-center">New Branch</h4>
             
-                    <div class="card raleway ">
-                        <div class="card-header font-weight-bold">Register Form</div>
+                    <div class="card">
+                      <div class="card-header font-weight-bold">Register Form</div>
                         <div class="card-body branch_add">
+                           {{-- Success Alert --}}
+                        @if(session('status'))
+                        <div class="alert alert-success alert-dismissible fade show text-center font-weight-bold small" role="alert">
+                            {{session('status')}}
+                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                           </button>
+                         </div>
+                     @endif
+
+                     {{-- Error Alert --}}
+                     @if(session('error'))
+                          <div class="alert alert-danger alert-dismissible fade show text-center font-weight-bold small" role="alert">
+                              {{session('error')}}
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                     @endif
+                          <form method="POST" action="{{ route($registerRoute) }}">
                             <div class="row register-form">
+                              
+                                @csrf
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Branch Name" value="" />
+                                      <input id="name" placeholder="Branch Name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                      @error('name')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                  @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Branch ID" value="" />
+                                        <input type="text" class="form-control" placeholder="Branch ID" name="branch_id" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password" value="" />
+                                      <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                      @error('password')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                  @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control"  placeholder="Confirm Password" value="" />
+                                      <input id="password-confirm" type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation" required autocomplete="new-password">
                                     </div>
                                     
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email" value="" />
+                                      <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                      @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Phone" value="" />
+                                        <input type="text" minlength="11" maxlength="11" name="phone" class="form-control" placeholder="Phone"  />
                                     </div>
                                     <div class="form-group">
-                                        <select class="form-control">
+                                        <select class="form-control" name="zone">
                                             <option class="hidden"  selected disabled>Select Zone</option>
-                                            <option>Dhaka</option>
-                                            <option>Chittagong</option>
-                                            <option>Sylhet</option>
-                                            <option>Comilla</option>
+                                            <option value="Dhaka">Dhaka</option>
+                                            <option value="Chittagong">Chittagong</option>
+                                            <option value="Sylhet">Sylhet</option>
+                                            <option value="Comilla">Comilla</option>
                                             
                                         </select>
                                     </div>
                                     <div class="d-flex flex-row-reverse">
                                         <div class="p-4">
-                                            <input type="submit" class="btn btn-unique" style="margin-top:0%;"  value="Add Branch"/>
+                                            <input type="submit" class="btn btn-unique" style="margin-top:20%;"  value="Add Branch"/>
                                         </div>
                                         
                                       </div>
                                     
                                 </div>
-                                
+                              </form>
                             </div>
                         </div>
                     </div>
