@@ -94,6 +94,7 @@ a:hover{
 .branch_add{
   padding-left:10%!important;
   padding-right:10%!important;
+  padding-top:5%!important;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current,
