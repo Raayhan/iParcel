@@ -168,8 +168,13 @@
                                   @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Branch ID" name="branch_id" />
-                                    </div>
+                                        <input type="text" id="branch_id" class="form-control  @error('branch_id') is-invalid @enderror" placeholder="Branch ID" name="branch_id" />
+                                        @error('branch_id')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                      </div>
                                     <div class="form-group">
                                       <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
                                       @error('password')
@@ -193,8 +198,13 @@
                                 @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" minlength="11" maxlength="11" name="phone" class="form-control" placeholder="Phone"  />
-                                    </div>
+                                        <input type="text"  name="phone" class="form-control @error('phone') is-invalid @enderror" placeholder="Phone"  />
+                                        @error('phone')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                      </div>
                                     <div class="form-group">
                                         <select class="form-control" name="zone">
                                             <option class="hidden"  selected disabled>Select Zone</option>
