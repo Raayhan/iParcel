@@ -39,12 +39,18 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
     
   Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     
-    
+    //Dashboard Routes
       Route::get('/dashboard',[App\Http\Controllers\Admin\DashboardController::class,'index'])->middleware('admin')->name('dashboard');
+     
+     
+      //Branch Routes
       Route::get('/branch/branches',[App\Http\Controllers\Admin\ViewBranchController::class,'index'])->middleware('admin')->name('branches');
       Route::get('/branch/add',[App\Http\Controllers\Admin\AddBranchController::class,'BranchRegisterForm'])->middleware('admin')->name('branch.add');
       Route::post('/branch/add',[App\Http\Controllers\Admin\AddBranchController::class,'AddBranch']);
     
+
+      //Customer Routes
+      Route::get('/customer/customers',[App\Http\Controllers\Admin\ViewCustomerController::class,'index'])->middleware('admin')->name('customers');
     
     //Login Routes
     Route::get('/login',[App\Http\Controllers\Admin\Auth\LoginController::class,'showLoginForm'])->name('login');

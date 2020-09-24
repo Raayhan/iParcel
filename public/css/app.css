@@ -90,6 +90,10 @@ body {
 a:hover{
   text-decoration: none!important;
 }
+.sidebar .nav-item .collapse .collapse-inner{
+  background-color:#486dda!important;
+  
+}
 
 .branch_add{
   padding-left:10%!important;

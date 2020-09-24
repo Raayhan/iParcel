@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Models\Branch;
+use App\Models\User;
 class DashboardController extends Controller
 {
    
@@ -17,6 +18,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        
+        $branch = Branch::count();
+        $customer = User::count();
+        return view('admin.dashboard',['branch'=>$branch,'customer'=>$customer]);
     }
 }

@@ -63,7 +63,7 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class=" py-2 collapse-inner rounded">
             
-            <a class="collapse-item" href="\admin\customers"><i class="fas fa-list-ul"></i> &nbsp;All Customers</a>
+            <a class="collapse-item" href="\admin\customer\customers"><i class="fas fa-list-ul"></i> &nbsp;All Customers</a>
             <a class="collapse-item" href="#"><i class="fas fa-user-plus"></i> &nbsp;Add Customer</a>
             <a class="collapse-item" href="#"><i class="fas fa-user-minus"></i> &nbsp;Remove Customer</a>
             
@@ -147,12 +147,12 @@
 
             
             <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
+             <a onclick="window.location.href='/admin/branch/branches'"> <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Branches</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">15</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$branch}}</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-code-branch fa-2x text-gray-500"></i>
@@ -160,6 +160,7 @@
                   </div>
                 </div>
               </div>
+            </a>
             </div>
 
             
@@ -169,7 +170,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Customers</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">267</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$customer}}</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-users fa-2x text-gray-500"></i>

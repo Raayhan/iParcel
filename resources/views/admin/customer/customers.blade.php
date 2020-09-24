@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('pagetitle', 'All Branches')
+@section('pagetitle', 'All Customers')
 @section('styles')
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
@@ -41,7 +41,7 @@
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-code-branch"></i>
           <span>BRANCH</span>
@@ -57,7 +57,7 @@
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-users"></i>
           <span>CUSTOMER</span>
@@ -173,22 +173,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                      @foreach($branches as $branch)
-
-                        <tr>
-
-                          <td>{{ $branch->name }}</td>
-                          <td>{{ $branch->branch_id }}</td>
-                          <td>{{ $branch->zone }}</td>
-                          <td>{{ $branch->email }}</td>
-                          <td>{{ $branch->phone }}</td>
-                          <td>{{ $branch->completed }}</td>
-                          <td>{{ $branch->pending }}</td>
-                          <td>৳ {{ $branch->balance }}</td>
-
-                        </tr>
-
-                          @endforeach
+                      
                        
                     </tbody>
                     <tfoot>
