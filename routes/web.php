@@ -41,7 +41,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
     
     
       Route::get('/dashboard',[App\Http\Controllers\Admin\DashboardController::class,'index'])->middleware('admin')->name('dashboard');
-      Route::get('/branch/branches',[App\Http\Controllers\PagesController::class,'AllBranches'])->middleware('admin')->name('branches');
+      Route::get('/branch/branches',[App\Http\Controllers\Admin\ViewBranchController::class,'index'])->middleware('admin')->name('branches');
       Route::get('/branch/add',[App\Http\Controllers\Admin\AddBranchController::class,'BranchRegisterForm'])->middleware('admin')->name('branch.add');
       Route::post('/branch/add',[App\Http\Controllers\Admin\AddBranchController::class,'AddBranch']);
     

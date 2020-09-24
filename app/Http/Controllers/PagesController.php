@@ -39,9 +39,7 @@ class PagesController extends Controller
         }
        
     }
-    public function AllBranches(){
-        return view('admin.branch.branches');
-    }
+   
   
     
 }

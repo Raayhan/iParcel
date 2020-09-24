@@ -40,7 +40,7 @@ class AddBranchController extends Controller
     
           //redirect to page  
         
-        return redirect()->to('/admin/branch/add')->with('status','New Branch Created Successfully');
+        return redirect()->to('/admin/branch/branches')->with('status','New Branch Created Successfully');
 
     }
     private function validator(Request $request)

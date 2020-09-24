@@ -140,6 +140,24 @@
             <h6 class="m-0 font-weight-bold text-primary">All Branch Informations</h6>
           </div>
           <div class="card-body">
+            @if(session('status'))
+            <div class="alert alert-success alert-dismissible fade show text-center font-weight-bold small" role="alert">
+                {{session('status')}}
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+               </button>
+             </div>
+         @endif
+
+         {{-- Error Alert --}}
+         @if(session('error'))
+              <div class="alert alert-danger alert-dismissible fade show text-center font-weight-bold small" role="alert">
+                  {{session('error')}}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+         @endif
             <div class="table-responsive">
                 <table id="example" class="table table-striped table-bordered" style="width:100%;text-align:center!important;">
                     <thead>
@@ -155,37 +173,23 @@
                         </tr>
                     </thead>
                     <tbody>
+                      @foreach($branches as $branch)
+
                         <tr>
-                            <td>Gulshan</td>
-                            <td>DHK101GSN</td>
-                            <td>Dhaka</td>
-                            <td>gulshan@iparcel.com</td>
-                            <td>01675613100</td>
-                            <td>33</td>
-                            <td>4</td>
-                            <td>৳ 3500.00</td>
+
+                          <td>{{ $branch->name }}</td>
+                          <td>{{ $branch->branch_id }}</td>
+                          <td>{{ $branch->zone }}</td>
+                          <td>{{ $branch->email }}</td>
+                          <td>{{ $branch->phone }}</td>
+                          <td>{{ $branch->completed }}</td>
+                          <td>{{ $branch->pending }}</td>
+                          <td>৳ {{ $branch->balance }}</td>
+
                         </tr>
-                        
-                        <tr>
-                          <td>Banani</td>
-                          <td>DHK102BNI</td>
-                          <td>Dhaka</td>
-                          <td>banani@iparcel.com</td>
-                          <td>01718521456</td>
-                          <td>25</td>
-                          <td>2</td>
-                          <td>৳ 2700.00</td>
-                        </tr>
-                        <tr>
-                          <td>Basundhara</td>
-                          <td>DHK103BSD</td>
-                          <td>Dhaka</td>
-                          <td>basundhara@iparcel.com</td>
-                          <td>01812541255</td>
-                          <td>29</td>
-                          <td>1</td>
-                          <td>৳ 3150.00</td>
-                        </tr>
+
+                          @endforeach
+                       
                     </tbody>
                     <tfoot>
                         <tr>
