@@ -49,7 +49,7 @@ class AddBranchController extends Controller
             $rules = [
                 'name'      =>'required|string|unique:branches|min:3|max:191',
                 'email'     => 'required|email|unique:branches|min:5|max:191',
-                'password'  => 'required|string|min:6|max:255',
+                'password'  => 'required|string|confirmed|min:6|max:255',
                 'branch_id' => 'required|string|unique:branches|min:9|max:9',
                 'phone'     => 'required|string|unique:branches|min:11|max:11',
             ];

@@ -185,6 +185,9 @@
                                     </div>
                                     <div class="form-group">
                                       <input id="password-confirm" type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation" required autocomplete="new-password">
+                                      <span id='message'>
+                                        
+                                    </span>
                                     </div>
                                     
                                 </div>
@@ -232,7 +235,14 @@
     </div>
 </div>
 @section('scripts')
-
+<script>
+  $('#password, #password-confirm').on('keyup', function () {
+if ($('#password').val() == $('#password-confirm').val()) {
+  $('#message').html('Matched <i class="fas fa-check-circle"></i>').css('color', 'green');
+} else 
+  $('#message').html('Not Matching <i class="fas fa-times-circle"></i>').css('color', 'red');
+});
+                                  </script>   
   
    <script src="{{asset('js/vendor/bootstrap.bundle.min.js')}}"></script>
    
