@@ -37,7 +37,7 @@ class GoogleController extends Controller
      
             if($finduser){
      
-               
+                Auth::guard('customer')->login($finduser);
     
                 return redirect('/customer/dashboard');
      
@@ -49,7 +49,7 @@ class GoogleController extends Controller
                     'password' => encrypt('123456dummy')
                 ]);
                 
-                Auth::login($newUser);
+                Auth::guard('customer')->login($newUser);
      
                 return redirect('/customer/dashboard');
             }
