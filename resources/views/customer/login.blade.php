@@ -31,7 +31,7 @@
                             <i class="fas fa-users fa-3x text-center"></i>
                         </div> 
                         
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route($loginRoute) }}">
                         @csrf
                         
                         <div class="form-group row">

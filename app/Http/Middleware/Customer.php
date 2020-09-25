@@ -16,7 +16,7 @@ class Customer
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::guard('web')->check()){
+        if(Auth::guard('customer')->check()){
             return $next($request);
         }
         return redirect('/customer/login')->with('error',"You must login to access Customer Panel");

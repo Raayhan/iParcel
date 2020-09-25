@@ -21,7 +21,7 @@
             <p style="margin-top:5%">An advanced online digital parcel service</p>
             <div class="row justify-content-center">
                 <button onclick="window.location.href='/login'" class="btn btn-unique">LOGIN</button>
-                <button onclick="window.location.href='/register'" class="btn btn-mdb-color">REGISTER</button>
+                <button onclick="window.location.href='/customer/register'" class="btn btn-mdb-color">REGISTER</button>
             </div>
         </div>
     </div>

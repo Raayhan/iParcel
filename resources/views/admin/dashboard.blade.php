@@ -65,7 +65,7 @@
             
             <a class="collapse-item" href="\admin\customer\customers"><i class="fas fa-list-ul"></i> &nbsp;All Customers</a>
             <a class="collapse-item" href="#"><i class="fas fa-user-plus"></i> &nbsp;Add Customer</a>
-            <a class="collapse-item" href="#"><i class="fas fa-user-minus"></i> &nbsp;Remove Customer</a>
+            <a class="collapse-item" href="#"><i class="fas fa-user-minus"></i> &nbsp;Block Customer</a>
             
           </div>
         </div>
@@ -88,7 +88,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class=" py-2 collapse-inner rounded">
             <a class="collapse-item" href="#">All Shipments</a>
-            <a class="collapse-item" href="#">View Status</a>
+            <a class="collapse-item" href="#">Live Status</a>
             <a class="collapse-item" href="#">Pickup Requests</a>
             <a class="collapse-item" href="#">Arrived Parcels</a>
             <a class="collapse-item" href="#">Shipped Parcels</a>
@@ -165,7 +165,7 @@
 
             
             <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
+             <a onclick="window.location.href='/admin/customer/customers'"> <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
@@ -178,6 +178,7 @@
                   </div>
                 </div>
               </div>
+            </a>
             </div>
 
             
@@ -186,7 +187,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Shipment Completed</div>
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Completed</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
                           <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">334</div>
@@ -208,7 +209,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Pending Shipment</div>
+                      <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Pending</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                     </div>
                     <div class="col-auto">
@@ -241,7 +242,32 @@
                 </div>
               </div>
             </div>
-
+   <!-- Pie Chart -->
+   <div class="col-xl-4 col-lg-5">
+    <div class="card shadow mb-4">
+      <!-- Card Header - Dropdown -->
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">Branch vs Customer Ratio</h6>
+       
+      </div>
+      <!-- Card Body -->
+      <div class="card-body">
+        <div class="chart-pie pt-4 pb-2">
+          <canvas id="myPieChart"></canvas>
+        </div>
+        <div class="mt-4 text-center small">
+         
+          <span class="mr-2">
+            <i class="fas fa-circle text-primary"></i> Branches
+          </span>
+          <span class="mr-2">
+            <i class="fas fa-circle text-success"></i> Customers
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
            
 
           
@@ -290,6 +316,7 @@
     <script src="{{asset('js/vendor/admin.js')}}"></script>
     <script src="{{asset('js/vendor/Chart.js')}}"></script>
     <script src="{{asset('js/vendor/chart-bar-demo.js')}}"></script>
+    <script src="{{asset('js/vendor/chart-pie-demo.js')}}"></script>
     
 @stop
 @endsection

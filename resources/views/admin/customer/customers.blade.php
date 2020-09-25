@@ -131,13 +131,13 @@
        <div class="container-fluid py-4">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800 text-center">iParcel Branches</h1>
+        <h1 class="h3 mb-2 text-gray-800 text-center">iParcel Customers</h1>
         
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">All Branch Informations</h6>
+            <h6 class="m-0 font-weight-bold text-primary">All Customer Informations</h6>
           </div>
           <div class="card-body">
             @if(session('status'))
@@ -162,14 +162,14 @@
                 <table id="example" class="table table-striped table-bordered" style="width:100%;text-align:center!important;">
                     <thead>
                         <tr>
-                            <th>Branch</th>
+                            <th>Name</th>
                             <th>ID</th>
-                            <th>Zone</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>Completed <i class="far fa-check-circle"></i></th>
-                            <th>Pending <i class="far fa-clock"></i></th>
-                            <th>Earnings</th>
+                            <th>Address</th>
+                            <th>Shipments</th>
+                            <th>Paid</th>
+                            <th>Due</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -178,14 +178,14 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                          <th>Branch</th>
-                          <th>ID</th>
-                          <th>Zone</th>
-                          <th>Email</th>
-                          <th>Phone</th>
-                          <th>Completed <i class="far fa-check-circle"></i></th>
-                          <th>Pending <i class="far fa-clock"></i></th>
-                          <th>Earnings</th>
+                          <th>Name</th>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Shipments</th>
+                            <th>Paid</th>
+                            <th>Due</th>
                         </tr>
                     </tfoot>
                 </table>
