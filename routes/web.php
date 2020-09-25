@@ -99,8 +99,8 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
       Route::get('/auth/google', [App\Http\Controllers\Customer\Auth\GoogleController::class, 'redirectToGoogle']);
       Route::get('/auth/google/callback', [App\Http\Controllers\Customer\Auth\GoogleController::class, 'handleGoogleCallback']);
 
-      Route::get('/auth/linkedin', [App\Http\Controllers\Auth\LinkedinController::class, 'redirectToLinkedin']);
-      Route::get('/auth/linkedin/callback', [App\Http\Controllers\Auth\LinkedinController::class, 'handleLinkedinCallback']);
+      Route::get('/auth/linkedin', [App\Http\Controllers\Customer\Auth\LinkedinController::class, 'redirectToLinkedin']);
+      Route::get('/auth/linkedin/callback', [App\Http\Controllers\Customer\Auth\LinkedinController::class, 'handleLinkedinCallback']);
 
 
 

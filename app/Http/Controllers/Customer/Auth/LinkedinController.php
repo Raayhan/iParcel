@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Customer\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Socialite;
 use Auth;
 use Exception;
-use App\Models\User;
+use App\Models\Customer;
 
 class LinkedinController extends Controller
 {
@@ -30,25 +30,25 @@ class LinkedinController extends Controller
     {
         try {
     
-            $user = Socialite::driver('linkedin')->user();
+            $customer = Socialite::driver('linkedin')->user();
      
-            $finduser = User::where('linkedin_id', $user->id)->first();
+            $finduser = Customer::where('linkedin_id', $customer->id)->first();
      
             if($finduser){
      
-                Auth::login($finduser);
+                Auth::guard('customer')->login($finduser);
     
                 return redirect('/customer/dashboard');
      
             }else{
-                $newUser = User::create([
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'linkedin_id'=> $user->id,
+                $newUser = Customer::create([
+                    'name' => $customer->name,
+                    'email' => $customer->email,
+                    'linkedin_id'=> $customer->id,
                     'password' => encrypt('123456dummy')
                 ]);
     
-                Auth::login($newUser);
+                Auth::guard('customer')->login($newUser);
      
                 return redirect('/customer/dashboard');
             }
