@@ -42,11 +42,11 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item active">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Branch" aria-expanded="true" aria-controls="Branch">
           <i class="fas fa-fw fa-code-branch"></i>
           <span>BRANCH</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="Branch" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="py-2 collapse-inner rounded">
             
             <a class="collapse-item" href="/admin/branch/branches"><i class="fas fa-list-ul"></i> &nbsp;All Branches</a>
@@ -58,16 +58,16 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Customer" aria-expanded="true" aria-controls="Customer">
           <i class="fas fa-fw fa-users"></i>
           <span>CUSTOMER</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="Customer" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class=" py-2 collapse-inner rounded">
             
             <a class="collapse-item" href="\admin\customer\customers"><i class="fas fa-list-ul"></i> &nbsp;All Customers</a>
-            <a class="collapse-item" href="#"><i class="fas fa-user-plus"></i> &nbsp;Add Customer</a>
-            <a class="collapse-item" href="#"><i class="fas fa-user-minus"></i> &nbsp;Remove Customer</a>
+            <a class="collapse-item" href="\admin\customer\add"><i class="fas fa-user-plus"></i> &nbsp;Add Customer</a>
+            <a class="collapse-item" href="\admin\customer\block"><i class="fas fa-user-times"></i> &nbsp;Block Customer</a>
             
           </div>
         </div>
@@ -83,33 +83,40 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Shipment" aria-expanded="true" aria-controls="Shipment">
           <i class="fas fa-dolly-flatbed"></i>
           <span>SHIPMENTS</span>
         </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="Shipment" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class=" py-2 collapse-inner rounded">
-            <a class="collapse-item" href="#">All Shipments</a>
-            <a class="collapse-item" href="#">View Status</a>
-            <a class="collapse-item" href="#">Pickup Requests</a>
-            <a class="collapse-item" href="#">Arrived Parcels</a>
-            <a class="collapse-item" href="#">Shipped Parcels</a>
+            <a class="collapse-item" href="\admin\shipment\all"><i class="fas fa-list-ul"></i> &nbsp;All Shipments</a>
+            <a class="collapse-item" href="\admin\shipment\live"><i class="fas fa-eye"></i> &nbsp;Live Status</a>
+            <a class="collapse-item" href="\admin\shipment\request"><i class="fas fa-truck-pickup"></i> &nbsp;Pickup Requests</a>
+            <a class="collapse-item" href="\admin\shipment\arrived"><i class="fas fa-download"></i> &nbsp;Arrived Parcels</a>
+            <a class="collapse-item" href="\admin\shipment\shipped"><i class="fas fa-calendar-check"></i> &nbsp;Shipped Parcels</a>
             
         </div>
       </li>
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="\admin\earnings">
           <i class="fas fa-fw fa-dollar-sign"></i>
-          <span>Earnings</span></a>
+          <span>EARNINGS</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-file-alt"></i>
-          <span>Reports</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Account" aria-expanded="true" aria-controls="Account">
+          <i class="fas fa-user-secret"></i>
+          <span>ACCOUNT</span></a>
+          <div id="Account" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class=" py-2 collapse-inner rounded">
+              <a class="collapse-item" href="\admin\profile\view"><i class="fas fa-user-circle"></i> &nbsp;View Account</a>
+              <a class="collapse-item" href="\admin\profile\edit"><i class="fas fa-user-edit"></i> &nbsp;Edit Account</a>
+              
+              
+          </div>
       </li>
 
       <!-- Divider -->
@@ -122,6 +129,7 @@
 
     </ul>
     <!-- End of Sidebar -->
+
 
     <div id="content-wrapper" class="d-flex flex-column">
 
