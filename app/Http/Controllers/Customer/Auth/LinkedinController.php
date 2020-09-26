@@ -50,7 +50,7 @@ class LinkedinController extends Controller
     
                 Auth::guard('customer')->login($newUser);
      
-                return redirect('/customer/dashboard');
+                return redirect('/customer/profile/complete');
             }
     
         } catch (Exception $e) {

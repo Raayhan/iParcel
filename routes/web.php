@@ -34,6 +34,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
 
       Route::get('/dashboard',[App\Http\Controllers\Customer\DashboardController::class,'index'])->middleware('customer')->name('dashboard');
     
+
       //Login Routes
       Route::get('/register',[App\Http\Controllers\Customer\Auth\RegisterController::class,'CustomerRegisterForm'])->name('register');
       Route::post('/register',[App\Http\Controllers\Customer\Auth\RegisterController::class,'RegisterCustomer']);
@@ -41,6 +42,11 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
       Route::post('/login',[App\Http\Controllers\Customer\Auth\LoginController::class,'login']);
       Route::post('/logout',[App\Http\Controllers\Customer\Auth\LoginController::class,'logout'])->name('logout');
   
+
+      //Profile Routes
+
+      Route::get('/profile/complete',[App\Http\Controllers\Customer\Profile\CompleteProfileController::class,'CompleteForm'])->middleware('customer')->name('CompleteForm');
+      Route::post('/profile/complete', [App\Http\Controllers\Customer\Profile\CompleteProfileController::class,'CompleteProfile']);
   });
   
   
