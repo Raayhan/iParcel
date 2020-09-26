@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\Branch;
-use App\Models\User;
+use App\Models\Customer;
 class PagesController extends Controller
 {
  
@@ -14,16 +14,14 @@ class PagesController extends Controller
 
     public function index(){
         if((Auth::guard('customer')->check())) {
-            return view('customer.dashboard');
+            return redirect('/customer/dashboard');
         }
         elseif((Auth::guard('branch')->check())){
-            return view('branch.dashboard');
+            return redirect('/branch/dashboard');
         }
         elseif((Auth::guard('admin')->check())){
              
-        $branch = Branch::count();
-        $customer = User::count();
-        return view('admin.dashboard',['branch'=>$branch,'customer'=>$customer]);
+            return redirect('/admin/dashboard');
         }
         else{
             return view('welcome');

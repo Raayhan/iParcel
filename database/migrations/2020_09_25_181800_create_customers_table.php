@@ -21,9 +21,9 @@ class CreateCustomersTable extends Migration
             $table->text('password');
             $table->text('phone')->unique()->nullable();
             $table->text('address')->nullable();
-            $table->integer('shipments')->nullable();
-            $table->integer('balance')->nullable();
-            $table->integer('due')->nullable();
+            $table->integer('shipments')->nullable()->default('0');
+            $table->decimal('balance')->nullable()->default('0.00');
+            $table->decimal('due')->nullable()->default('0.00');
             $table->string('google_id')->nullable();
             $table->string('linkedin_id')->nullable();
             $table->rememberToken();

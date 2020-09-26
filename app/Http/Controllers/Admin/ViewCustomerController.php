@@ -10,6 +10,7 @@ class ViewCustomerController extends Controller
 {
     public function index()
     {
-    return view('admin.customer.customers');
+        $customers = DB::table('customers')->select('name','id','email','phone','address','shipments','balance','due')->get();
+        return view('admin.customer.customers',['customers'=>$customers]);
     }
 }

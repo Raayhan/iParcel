@@ -21,9 +21,9 @@ class CreateBranchesTable extends Migration
             $table->string('email')->unique();
             $table->string('phone',100);
             $table->string('password',255);
-            $table->integer('completed')->nullable();
-            $table->integer('pending')->nullable();
-            $table->float('balance')->nullable();
+            $table->integer('completed')->nullable()->default('0');
+            $table->integer('pending')->nullable()->default('0');
+            $table->decimal('balance')->nullable()->default('0.00');
             $table->rememberToken();
             $table->timestamps();
         });

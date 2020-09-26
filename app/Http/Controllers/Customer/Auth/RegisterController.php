@@ -5,19 +5,45 @@ namespace App\Http\Controllers\Customer\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Customer;
+use App\Models\Branch;
+use App\Models\Admin;
 use Hash;
+use Auth;
 
 class RegisterController extends Controller
 {
     
     public function CustomerRegisterForm(){
+       
+       
+        if((Auth::guard('customer')->check())){
+            return redirect()
+            ->intended(route('customer.dashboard'))
+            ->with('status','You are already registered as Customer!');
+        }
+        elseif((Auth::guard('branch')->check())){
+            return redirect()
+            ->intended(route('branch.dashboard'))
+            ->with('status','You are logged in as a Branch.');
+        }
+        elseif((Auth::guard('admin')->check())){
+            return redirect()
+            ->intended(route('admin.dashboard'))
+            ->with('status','You are logged in as an Admin.');
+        }
+    
+    else{
+      
+
+      
+      
         return view('customer.register',[
             
             'registerRoute' => 'customer.register',
            
         ]);
     }
-
+    }
     public function RegisterCustomer(Request $request){
 
         $this->validator($request);

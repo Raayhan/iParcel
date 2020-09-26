@@ -173,7 +173,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                      
+                      @foreach($customers as $customer)
+
+                      <tr>
+
+                        <td>{{ $customer->name }}</td>
+                        <td>CUS202010{{ $customer->id }}</td>
+                        <td>{{ $customer->email }}</td>
+                        <td>{{ $customer->phone }}</td>
+                        <td>{{ $customer->address }}</td>
+                        <td>{{ $customer->shipments }}</td>
+                        <td>৳ {{ $customer->balance }}</td>
+                        <td>৳ {{ $customer->due }}</td>
+
+                      </tr>
+
+                        @endforeach
                        
                     </tbody>
                     <tfoot>
