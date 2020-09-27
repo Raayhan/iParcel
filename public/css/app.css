@@ -98,6 +98,15 @@ a:hover{
 .Error404{
   height:80vh;
 }
+.profile{
+  margin-top:5%;
+  margin-left:3%!important;
+  margin-right:3%!important;
+}
+.profile hr{
+margin-top:2px;
+margin-bottom:2px;
+}
 .branch_add{
   padding-left:10%!important;
   padding-right:10%!important;

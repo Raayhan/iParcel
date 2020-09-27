@@ -80,6 +80,11 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
     //Dashboard Routes
       Route::get('/dashboard',[App\Http\Controllers\Admin\DashboardController::class,'index'])->middleware('admin')->name('dashboard');
      
+      // Admin Profile Routes
+
+      Route::get('/profile/view',[App\Http\Controllers\Admin\Profile\viewProfileController::class,'ViewProfile'])->middleware('admin')->name('profile');
+
+
      
       //Branch Admin Routes
       Route::get('/branch/branches',[App\Http\Controllers\Admin\ViewBranchController::class,'index'])->middleware('admin')->name('branches');
