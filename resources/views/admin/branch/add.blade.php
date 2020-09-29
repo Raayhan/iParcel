@@ -139,7 +139,7 @@
           <!-- Page Heading -->
           <h4 class="h4 mb-4 text-gray-800 text-center">New Branch</h4>
             
-                    <div class="card">
+                    <div class="card Poppins">
                       <div class="card-header font-weight-bold">Register Form</div>
                         <div class="card-body branch_add">
                            {{-- Success Alert --}}

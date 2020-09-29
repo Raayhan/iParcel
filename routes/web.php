@@ -83,7 +83,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
       // Admin Profile Routes
 
       Route::get('/profile/view',[App\Http\Controllers\Admin\Profile\viewProfileController::class,'ViewProfile'])->middleware('admin')->name('profile');
-
+      Route::post('/profile/view',[App\Http\Controllers\Admin\Profile\viewProfileController::class,'ChangeName']);
 
      
       //Branch Admin Routes
