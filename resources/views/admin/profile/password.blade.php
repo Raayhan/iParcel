@@ -140,7 +140,7 @@
             <div class="container-fluid py-4">
               
 
-            <section class="section about-section gray-bg" id="about">
+            <section class="section about-section gray-bg" id="about" style="padding-top:6%;">
               @if(session('status'))
               <div style="margin-left:10%;margin-right:10%;" class="alert alert-success alert-dismissible fade show text-center font-weight-bold small" role="alert">
                   {{session('status')}}&nbsp; <i class="far fa-check-circle"></i>

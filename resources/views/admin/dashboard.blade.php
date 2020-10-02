@@ -196,7 +196,7 @@
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Completed</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">334</div>
+                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$completed}}</div>
                         </div>
                        
                       </div>
@@ -216,7 +216,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Pending</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$pending}}</div>
                     </div>
                     <div class="col-auto">
                       <i class="far fa-clock fa-2x text-gray-500"></i>

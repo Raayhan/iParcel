@@ -72,7 +72,7 @@
                 <div class="row justify-content-center">
                     
                         <div class="row justify-content-center" style="margin-top:10%">
-                            <img  class="animated zoomIn mb-4" src="{{asset('img/404.png')}}" alt="">
+                            <img  class="mb-4" src="{{asset('img/404.png')}}" alt="">
                         </div>
                         
                        
@@ -80,7 +80,7 @@
                    
                         
               
-                        <h1 class="text-center raleway mb-4 text-secondary">Page Not Found</h1>
+                        <h1 class="text-center raleway mb-4 text-secondary">PAGE NOT FOUND</h1>
                         <div class="row justify-content-center">
                             <button onclick="goBack()" class="btn btn-unique"><i class="fas fa-chevron-circle-left"></i> GO BACK</button>
                             <button onclick="window.location.href='/'" class="btn btn-mdb-color"><i class="fas fa-home"></i> HOME</button>

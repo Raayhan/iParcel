@@ -149,7 +149,7 @@
           <div class="card-body">
             @if(session('status'))
             <div class="alert alert-success alert-dismissible fade show text-center font-weight-bold small" role="alert">
-                {{session('status')}}
+                {{session('status')}}&nbsp; <i class="far fa-check-circle"></i>
                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                </button>
@@ -159,7 +159,7 @@
          {{-- Error Alert --}}
          @if(session('error'))
               <div class="alert alert-danger alert-dismissible fade show text-center font-weight-bold small" role="alert">
-                  {{session('error')}}
+                  {{session('error')}}&nbsp; <i class="fas fa-exclamation-triangle"></i>
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>

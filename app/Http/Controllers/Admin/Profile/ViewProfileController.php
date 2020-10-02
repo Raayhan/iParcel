@@ -5,13 +5,15 @@ namespace App\Http\Controllers\Admin\Profile;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use App\Models\Branch;
 use Hash;
 
 class ViewProfileController extends Controller
 {
     public function ViewProfile(){
-        
-        return view('admin.profile.view');
+        $completed = Branch::sum('completed');
+        $pending = Branch::sum('pending');
+        return view('admin.profile.view',['completed'=>$completed,'pending'=>$pending]);
        
     }
     public function ViewPassword(){

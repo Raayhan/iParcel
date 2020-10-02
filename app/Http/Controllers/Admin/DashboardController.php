@@ -21,6 +21,8 @@ class DashboardController extends Controller
         
         $branch = Branch::count();
         $customer = Customer::count();
-        return view('admin.dashboard',['branch'=>$branch,'customer'=>$customer]);
+        $completed = Branch::sum('completed');
+        $pending = Branch::sum('pending');
+        return view('admin.dashboard',['branch'=>$branch,'customer'=>$customer,'completed'=>$completed,'pending'=>$pending]);
     }
 }
