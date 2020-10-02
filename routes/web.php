@@ -98,6 +98,8 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
       Route::get('/customer/customers',[App\Http\Controllers\Admin\ViewCustomerController::class,'index'])->middleware('admin')->name('customers');
       Route::get('/customer/add',[App\Http\Controllers\Admin\AddCustomerController::class,'CustomerRegisterForm'])->middleware('admin')->name('customer.add');
       Route::post('/customer/add',[App\Http\Controllers\Admin\AddCustomerController::class,'AddCustomer']);
+      Route::get('/customer/block',[App\Http\Controllers\Admin\BlockCustomerController::class,'viewCustomerList'])->middleware('admin')->name('customers');
+      Route::post('/customer/block',[App\Http\Controllers\Admin\BlockCustomerController::class,'BlockCustomer']);
       
       //Login Routes
       Route::get('/login',[App\Http\Controllers\Admin\Auth\LoginController::class,'showLoginForm'])->name('login');
