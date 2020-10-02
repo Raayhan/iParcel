@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('pagetitle', 'Profile')
+@section('pagetitle', 'Account')
 @section('styles')
 <link href="{{ asset('css/vendor/admin.min.css') }}" rel="stylesheet">
 <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
@@ -111,10 +111,7 @@
           <span>ACCOUNT</span></a>
           <div id="Account" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class=" py-2 collapse-inner rounded">
-              <a class="collapse-item" href="\admin\profile\view"><i class="fas fa-user-cog"></i> &nbsp;Account Settings</a>
-              
-              
-              
+              <a class="collapse-item" href="\admin\profile\view"><i class="fas fa-user-cog"></i> &nbsp;Account Settings</a>              
           </div>
       </li>
 
@@ -142,13 +139,6 @@
             <div class="container-fluid py-4">
               <section class="section about-section gray-bg mb-4" id="about">
                 <div class="container">
-                    
-
-
-
-
-
-
                     <div class="counter">
                         <div class="row">
                             <div class="col-6 col-lg-3">
@@ -179,205 +169,132 @@
                     </div>
                 </div>
             </section>
-            <section class="section about-section gray-bg" id="about">
-             
+            <section class="section about-section gray-bg mb-4 raleway" id="about">
               <div class="container">
+                 <div id="accordion">
+                    <div class="row">
+                        <div class="col-md-6">
+                         <!-- Card -->
+                            <div class="card gradient-card">
+                               <!-- Content -->
+                               <div class="blue-grey-text d-flex h-100 mask cloudy-knoxville-gradient">
+                                   <div class="first-content align-self-center p-3" style="padding-left:10%!important;">
+                                       <p class="card-title">User</p>
+                                       <h5 class="lead mb-0 font-weight-bold">{{Auth::guard('admin')->user()->name}}</h5>
+                                    </div>
+                                    <div class="second-content align-self-center mx-auto text-center">
+                                        <i class="fas fa-user-tie fa-3x"></i>
+                                    </div>
+                                </div>       
+                     
+                             </div>
+                    <!-- Card -->
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Card -->
+                             <div class="card gradient-card">
+                                 <!-- Content -->
+                                 <div class="blue-grey-text d-flex h-100 mask cloudy-knoxville-gradient">
+                                     <div class="first-content align-self-center p-3"style="padding-left:10%!important;">
+                                          <p class="card-title">Email</p>
+                                          <h5 class="lead mb-0 font-weight-bold">{{Auth::guard('admin')->user()->email}}</h5>
+                                     </div>
+                                     <div class="second-content align-self-center mx-auto text-center">
+                                          <i class="fas fa-envelope fa-3x"></i>
+                                     </div>
+                                  </div>
+                              </div>
+                              <!-- Card -->
+                      
+                        </div>
 
-              
+                     </div>
+
+
+                </div>
+             </div>
+            </section>
+
+            <section class="section about-section gray-bg" id="about">
+              @if(session('status'))
+              <div style="margin-left:10%;margin-right:10%;" class="alert alert-success alert-dismissible fade show text-center font-weight-bold small" role="alert">
+                  {{session('status')}}&nbsp; <i class="far fa-check-circle"></i>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            @endif
+
+            @if(session('error'))
+              <div style="margin-left:10%;margin-right:10%;" class="alert alert-danger alert-dismissible fade show text-center font-weight-bold small" role="alert">
+                  {{session('error')}}&nbsp; <i class="fas fa-exclamation-triangle"></i>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+            @endif
+              <div class="container">
                 <div id="accordion">
                     <div class="card Poppins">
-                      <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Change Name
-                          </button>
-                        </h5>
+                      <div class="card-header">
+                        
                       </div>
-
-                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
-                          @if(session('status'))
-                          <div style="margin-left:10%;margin-right:10%;" class="alert alert-success alert-dismissible fade show text-center font-weight-bold small" role="alert">
-                              {{session('status')}}
-                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                             </button>
-                           </div>
-                       @endif
-  
-                       {{-- Error Alert --}}
-                       @if(session('error'))
-                            <div style="margin-left:10%;margin-right:10%;" class="alert alert-danger alert-dismissible fade show text-center font-weight-bold small" role="alert">
-                                {{session('error')}}
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                       @endif
-                          <form role="form" action="/admin/profile/view" method="POST" style="padding-left:15%;padding-top:3%;">
-                            @csrf
-                            <div class="form-group row">
-                                <label class="col-lg-3 col-form-label form-control-label"> New Name</label>
-                                <div class="col-lg-6">
-                                  
-                                
-                                  <input class="form-control  {{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" type="text">
-                                  @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                  @endif
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                              <label class="col-lg-3 col-form-label form-control-label text-danger font-weight-bold">Account Password</label>
-                              <div class="col-lg-6">
-                                  <input class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" type="password">
-                                  
-                                  @if ($errors->has('password'))
-                                  <span class="invalid-feedback" role="alert">
-                                      <strong>{{ $errors->first('password') }}</strong>
-                                  </span>
-                              @endif
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label"></label>
-                            <div class="col-lg-6">
-                              <input type="hidden" name="id" value= "{{Auth::guard('admin')->user()->id}}"/>
-                                <input type="submit" class="btn btn-dark-green Mybutton" value= "Save">
-                            
-                          </div>
-                        </form>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="card-header" id="headingTwo">
-                        <h5 class="mb-0">
-                          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Change Email
-                          </button>
-                        </h5>
-                      </div>
-                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                        <div class="card-body">
-                          <form role="form" action="#" method="POST" style="padding-left:15%;padding-top:3%;">
-                            <div class="form-group row">
-                                <label class="col-lg-3 col-form-label form-control-label">Email</label>
-                                <div class="col-lg-6">
-                                  
-                                
-                                  <input class="form-control  {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" type="email" value= {{Auth::guard('admin')->user()->email}}>
-                                  @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                  @endif
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                              <label class="col-lg-3 col-form-label form-control-label text-danger font-weight-bold">Account Password</label>
-                              <div class="col-lg-6">
-                                  <input class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" type="password">
-                                  
-                                  @if ($errors->has('password'))
-                                  <span class="invalid-feedback" role="alert">
-                                      <strong>{{ $errors->first('password') }}</strong>
-                                  </span>
-                              @endif
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label"></label>
-                            <div class="col-lg-6">
-                                
-                                <input type="submit" class="btn btn-dark-green Mybutton" value= "Save">
-                            
-                          </div>
-                        </form>
-                        </div>
-                      </div>
-                    </div>
-                  <div class="card">
-                    <div class="card-header" id="headingThree">
-                      <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                          Change Password
-                        </button>
-                      </h5>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                       <div class="card-body">
-                        <form role="form" action="#" method="POST" style="padding-left:15%;padding-top:3%;">
-                          <div class="form-group row">
-                              <label class="col-lg-3 col-form-label form-control-label">New Password</label>
-                              <div class="col-lg-6">
+                           <form role="form" action="/admin/profile/view" method="POST" style="padding-left:15%;padding-top:3%;">
+                                @csrf
+                               <div class="form-group row">
+                                   <label class="col-lg-3 col-form-label form-control-label">Name</label>
+                                   <div class="col-lg-6">
+                                      <input class="form-control  {{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{Auth::guard('admin')->user()->name}}" name="name" type="text">
+                                      @if ($errors->has('name'))
+                                         <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                         </span>
+                                      @endif
+                                   </div>
+                                </div>
+                                <div class="form-group row">
+                                     <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                                     <div class="col-lg-6">             
+                                        <input class="form-control  {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" type="email" value= {{Auth::guard('admin')->user()->email}}>
+                                            @if ($errors->has('email'))
+                                              <span class="invalid-feedback" role="alert">
+                                                  <strong>{{ $errors->first('email') }}</strong>
+                                              </span>
+                                            @endif
+                                      </div>
+                                </div>
                                 
-                              
-                                <input class="form-control  {{ $errors->has('newpassword') ? ' is-invalid' : '' }}" name="newpassword" type="password">
-                                @if ($errors->has('newpassword'))
-                                  <span class="invalid-feedback" role="alert">
-                                      <strong>{{ $errors->first('newpassword') }}</strong>
-                                  </span>
-                                @endif
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Confirm Password</label>
-                            <div class="col-lg-6">
-                              
-                            
-                              <input class="form-control  {{ $errors->has('newpassword-confirm') ? ' is-invalid' : '' }}" name="newpassword-confirm" type="password">
-                              @if ($errors->has('newpassword-confirm'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('newpassword-confirm') }}</strong>
-                                </span>
-                              @endif
-                            </div>
-                        </div>
-                          <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label text-danger font-weight-bold ">Account Password</label>
-                            <div class="col-lg-6">
-                                <input class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" type="password">
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label text-danger font-weight-bold">Account Password</label>
+                                    <div class="col-lg-6">
+                                        <input class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" type="password">
+                                             @if ($errors->has('password'))
+                                               <span class="invalid-feedback" role="alert">
+                                                   <strong>{{ $errors->first('password') }}</strong>
+                                               </span>
+                                             @endif
+                                    </div>
+                                </div>
                                 
-                                @if ($errors->has('password'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                          <label class="col-lg-3 col-form-label form-control-label"></label>
-                          <div class="col-lg-6">
-                              
-                              <input type="submit" class="btn btn-dark-green Mybutton" value= "Save">
-                          
-                        </div>
-                      </form>
+                                <div class="form-group row">
+                                      <label class="col-lg-3 col-form-label form-control-label"></label>
+                                      <div class="col-lg-6">
+                                         <input type="hidden" name="id" value= "{{Auth::guard('admin')->user()->id}}"/>
+                                         <input type="submit" class="btn btn-dark-green Mybutton" value= "Save">
+                                      </div>
+                            </form>
+                      </div>
+                      <div class="card-footer">
+                      
                       </div>
                     </div>
-                  </div>
                 </div>
-
-
-
-              </div>
+             </div>
             </section>
-              </div>
-    
-  
-        
-
-
-
-
-
-
-      </div>
+          </div>
+        </div>
       <!-- End of Content Wrapper -->
-
   </div>
   <!-- End of Page Wrapper -->
 
