@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('pagetitle', 'Account')
+@section('pagetitle', 'Change Password')
 @section('styles')
 <link href="{{ asset('css/vendor/admin.min.css') }}" rel="stylesheet">
 <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
@@ -138,83 +138,7 @@
 
         <!-- Begin Page Content -->
             <div class="container-fluid py-4">
-              <section class="section about-section gray-bg mb-4" id="about">
-                <div class="container">
-                    <div class="counter">
-                        <div class="row">
-                            <div class="col-6 col-lg-3">
-                                <div class="count-data text-center">
-                                    <h6 class="count h5" data-to="500" data-speed="500">500.00৳</h6>
-                                    <p class="m-0px font-w-600">Earnings</p>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-3">
-                                <div class="count-data text-center">
-                                    <h6 class="count h5" data-to="150" data-speed="150">150.00৳</h6>
-                                    <p class="m-0px font-w-600">Due</p>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-3">
-                                <div class="count-data text-center">
-                                    <h6 class="count h5" data-to="850" data-speed="850">850</h6>
-                                    <p class="m-0px font-w-600">Completed</p>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-3">
-                                <div class="count-data text-center">
-                                    <h6 class="count h5" data-to="190" data-speed="190">190</h6>
-                                    <p class="m-0px font-w-600">Pendings</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="section about-section gray-bg mb-4 raleway" id="about">
-              <div class="container">
-                 <div id="accordion">
-                    <div class="row">
-                        <div class="col-md-6">
-                         <!-- Card -->
-                            <div class="card gradient-card">
-                               <!-- Content -->
-                               <div class="blue-grey-text d-flex h-100 mask cloudy-knoxville-gradient">
-                                   <div class="first-content align-self-center p-3" style="padding-left:10%!important;">
-                                       <p class="card-title">User</p>
-                                       <h5 class="lead mb-0 font-weight-bold">{{Auth::guard('admin')->user()->name}}</h5>
-                                    </div>
-                                    <div class="second-content align-self-center mx-auto text-center">
-                                        <i class="fas fa-user-tie fa-3x"></i>
-                                    </div>
-                                </div>       
-                     
-                             </div>
-                    <!-- Card -->
-                        </div>
-                        <div class="col-md-6">
-                            <!-- Card -->
-                             <div class="card gradient-card">
-                                 <!-- Content -->
-                                 <div class="blue-grey-text d-flex h-100 mask cloudy-knoxville-gradient">
-                                     <div class="first-content align-self-center p-3"style="padding-left:10%!important;">
-                                          <p class="card-title">Email</p>
-                                          <h5 class="lead mb-0 font-weight-bold">{{Auth::guard('admin')->user()->email}}</h5>
-                                     </div>
-                                     <div class="second-content align-self-center mx-auto text-center">
-                                          <i class="fas fa-envelope fa-3x"></i>
-                                     </div>
-                                  </div>
-                              </div>
-                              <!-- Card -->
-                      
-                        </div>
-
-                     </div>
-
-
-                </div>
-             </div>
-            </section>
+              
 
             <section class="section about-section gray-bg" id="about">
               @if(session('status'))
@@ -238,41 +162,38 @@
                 <div id="accordion">
                     <div class="card Poppins">
                       <div class="card-header text-center">
-                        Edit Information
+                        Change Account Password
                       </div>
                       <div class="card-body">
-                           <form role="form" action="/admin/profile/view" method="POST" style="padding-left:15%;padding-top:3%;">
+                           <form role="form" action="/admin/profile/password" method="POST" style="padding-left:15%;padding-top:3%;">
                                 @csrf
                                <div class="form-group row">
-                                   <label class="col-lg-3 col-form-label form-control-label">Name</label>
+                                   <label class="col-lg-3 col-form-label form-control-label">New Password</label>
                                    <div class="col-lg-6">
-                                      <input class="form-control  {{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{Auth::guard('admin')->user()->name}}" name="name" type="text">
-                                      @if ($errors->has('name'))
+                                      <input class="form-control  {{ $errors->has('password') ? ' is-invalid' : '' }}"  name="password" type="password" id="newpassword">
+                                      @if ($errors->has('password'))
                                          <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
+                                            <strong>{{ $errors->first('password') }}</strong>
                                          </span>
                                       @endif
                                    </div>
                                 </div>
                                 <div class="form-group row">
-                                     <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                                     <label class="col-lg-3 col-form-label form-control-label">Confirm Password</label>
                                      <div class="col-lg-6">             
-                                        <input class="form-control  {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" type="email" value= {{Auth::guard('admin')->user()->email}}>
-                                            @if ($errors->has('email'))
-                                              <span class="invalid-feedback" role="alert">
-                                                  <strong>{{ $errors->first('email') }}</strong>
-                                              </span>
-                                            @endif
+                                        <input class="form-control" name="password_confirmation" type="password" id="newpassword-confirm">
+                                        <span class="font-weight-bold small" id='message'>
+                                        </span>
                                       </div>
                                 </div>
                                 
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label text-danger font-weight-bold">Account Password</label>
                                     <div class="col-lg-6">
-                                        <input class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" type="password">
-                                             @if ($errors->has('password'))
+                                        <input class="form-control {{ $errors->has('oldpassword') ? ' is-invalid' : '' }}" name="oldpassword" type="password">
+                                             @if ($errors->has('oldpassword'))
                                                <span class="invalid-feedback" role="alert">
-                                                   <strong>{{ $errors->first('password') }}</strong>
+                                                   <strong>{{ $errors->first('oldpassword') }}</strong>
                                                </span>
                                              @endif
                                     </div>
@@ -287,7 +208,7 @@
                             </form>
                       </div>
                       <div class="card-footer text-center small">
-                      <a href="/admin/profile/password">Change Account Password</a>
+                      <a href="/admin/profile/view">Change Account Settings</a>
                       </div>
                     </div>
                 </div>
@@ -300,7 +221,16 @@
   <!-- End of Page Wrapper -->
 
   @section('scripts')
- 
+  <script>
+    $('#newpassword, #newpassword-confirm').on('keyup', function () {
+      if ($('#newpassword').val() == $('#newpassword-confirm').val()) {
+          $('#message').html('Matched <i class="fas fa-check-circle"></i>').css('color', 'green');
+        }
+      else 
+          $('#message').html('Not Matching <i class="fas fa-times-circle"></i>').css('color', 'red');
+        }
+        );
+</script>  
     <script src="{{asset('js/vendor/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/vendor/admin.js')}}"></script>
     

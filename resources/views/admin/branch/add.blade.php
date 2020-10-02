@@ -113,7 +113,7 @@
         <div id="Account" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class=" py-2 collapse-inner rounded">
             <a class="collapse-item" href="\admin\profile\view"><i class="fas fa-user-cog"></i> &nbsp;Account Settings</a>
-            
+            <a class="collapse-item" href="\admin\profile\password"><i class="fas fa-user-lock"></i> &nbsp;Change Password</a>
             
         </div>
     </li>

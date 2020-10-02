@@ -14,6 +14,11 @@ class ViewProfileController extends Controller
         return view('admin.profile.view');
        
     }
+    public function ViewPassword(){
+        
+        return view('admin.profile.password');
+       
+    }
 
     public function ChangeName(Request $request){
         
@@ -48,6 +53,57 @@ class ViewProfileController extends Controller
                 'password'     => 'required|min:6|max:255',
                 'email'        => 'required|email|min:5|max:191',
                 'name'         => 'required|string|min:3|max:191',
+                
+               
+            ];
+
+            //custom validation error messages.
+            $messages = [
+               
+               
+            ];
+            
+
+            //validate the request.
+            $request->validate($rules,$messages);
+
+
+    }
+
+
+    public function ChangePassword(Request $request){
+        
+        $this->PasswordValidator($request);        
+        $id = $request->input('id');
+        $oldpassword = $request->input('oldpassword');
+        $newpassword = $request->input('password');
+        $hash = Hash::make($newpassword);
+
+        $admin = Admin::findOrFail($id);
+
+        if (Hash::check($oldpassword, $admin->password)) {
+        
+            $admin->password = $hash;
+            $admin->save();
+            return redirect()->to('/admin/profile/password')->with('status','Password Changed');
+
+        }
+        else {
+            return redirect()->to('/admin/profile/password')->with('error','Incorrect Password');
+        }
+       
+   
+    } 
+      
+
+    private function PasswordValidator(Request $request)
+    {
+            //validation rules.
+            $rules = [
+                
+                'password'     => 'required|min:6|max:255|confirmed',
+                'oldpassword'  => 'required|min:6|max:255',
+               
                 
                
             ];

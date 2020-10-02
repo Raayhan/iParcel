@@ -85,6 +85,8 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
       Route::get('/profile/view',[App\Http\Controllers\Admin\Profile\viewProfileController::class,'ViewProfile'])->middleware('admin')->name('profile');
       Route::post('/profile/view',[App\Http\Controllers\Admin\Profile\viewProfileController::class,'ChangeName']);
 
+      Route::get('/profile/password',[App\Http\Controllers\Admin\Profile\viewProfileController::class,'ViewPassword'])->middleware('admin')->name('password');
+      Route::post('/profile/password',[App\Http\Controllers\Admin\Profile\viewProfileController::class,'ChangePassword']);
      
       //Branch Admin Routes
       Route::get('/branch/branches',[App\Http\Controllers\Admin\ViewBranchController::class,'index'])->middleware('admin')->name('branches');
