@@ -4,7 +4,7 @@
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card raleway">
+            <div class="card Poppins">
                 <div class="card-header text-center login-card">{{ __('Profile Information') }}</div>
 
                 <div class="card-body" style="padding-top:7%;">

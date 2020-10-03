@@ -92,13 +92,14 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
       Route::get('/branch/branches',[App\Http\Controllers\Admin\ViewBranchController::class,'index'])->middleware('admin')->name('branches');
       Route::get('/branch/add',[App\Http\Controllers\Admin\AddBranchController::class,'BranchRegisterForm'])->middleware('admin')->name('branch.add');
       Route::post('/branch/add',[App\Http\Controllers\Admin\AddBranchController::class,'AddBranch']);
-    
+      Route::get('/branch/close',[App\Http\Controllers\Admin\CloseBranchController::class,'ViewBranchList'])->middleware('admin')->name('branches');
+      Route::post('/branch/close',[App\Http\Controllers\Admin\CloseBranchController::class,'CloseBranch']);
 
       //Customer Admin Routes
       Route::get('/customer/customers',[App\Http\Controllers\Admin\ViewCustomerController::class,'index'])->middleware('admin')->name('customers');
       Route::get('/customer/add',[App\Http\Controllers\Admin\AddCustomerController::class,'CustomerRegisterForm'])->middleware('admin')->name('customer.add');
       Route::post('/customer/add',[App\Http\Controllers\Admin\AddCustomerController::class,'AddCustomer']);
-      Route::get('/customer/block',[App\Http\Controllers\Admin\BlockCustomerController::class,'viewCustomerList'])->middleware('admin')->name('customers');
+      Route::get('/customer/block',[App\Http\Controllers\Admin\BlockCustomerController::class,'ViewCustomerList'])->middleware('admin')->name('customers');
       Route::post('/customer/block',[App\Http\Controllers\Admin\BlockCustomerController::class,'BlockCustomer']);
       
       //Login Routes

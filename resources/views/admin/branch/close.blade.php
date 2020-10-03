@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('pagetitle', 'Block Customer')
+@section('pagetitle', 'Close Branches')
 @section('styles')
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
@@ -11,8 +11,8 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
 
-     <!-- Sidebar -->
-     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/dashboard">
@@ -41,7 +41,7 @@
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Branch" aria-expanded="true" aria-controls="Branch">
           <i class="fas fa-fw fa-code-branch"></i>
           <span>BRANCH</span>
@@ -58,7 +58,7 @@
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Customer" aria-expanded="true" aria-controls="Customer">
           <i class="fas fa-fw fa-users"></i>
           <span>CUSTOMER</span>
@@ -139,18 +139,18 @@
        <div class="container-fluid py-4">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800 text-center">Block Customers</h1>
+        <h1 class="h3 mb-2 text-gray-800 text-center">Close Branches</h1>
         
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4 Poppins">
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">All Customer Informations</h6>
+            <h6 class="m-0 font-weight-bold text-primary">All Branch Informations</h6>
           </div>
           <div class="card-body">
             @if(session('status'))
             <div class="alert alert-success alert-dismissible fade show text-center font-weight-bold small" role="alert">
-                {{session('status')}}&nbsp; <i class="far fa-check-circle"></i>
+                {{session('status')}}
                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                </button>
@@ -160,7 +160,7 @@
          {{-- Error Alert --}}
          @if(session('error'))
               <div class="alert alert-danger alert-dismissible fade show text-center font-weight-bold small" role="alert">
-                  {{session('error')}}&nbsp; <i class="fas fa-exclamation-triangle"></i>
+                  {{session('error')}}
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
@@ -170,47 +170,47 @@
                 <table id="example" class="table table-striped table-bordered" style="width:100%;text-align:center!important;">
                     <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>Branch</th>
                             <th>ID</th>
-                            <th>Phone</th>
-                            <th>Shipments</th>
-                            <th>Paid</th>
-                            <th>Due</th>
+                            <th>Zone</th>
+                            <th>Completed <i class="far fa-check-circle"></i></th>
+                            <th>Pending <i class="far fa-clock"></i></th>
+                            <th>Earnings</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                      @foreach($customers as $customer)
+                      @foreach($branches as $branch)
 
-                      <tr>
+                        <tr>
 
-                        <td>{{ $customer->name }}</td>
-                        <td>CUS202010{{ $customer->id }}</td>
-                        <td>{{ $customer->phone }}</td>
-                        <td>{{ $customer->shipments }}</td>
-                        <td>৳ {{ $customer->balance }}</td>
-                        <td>৳ {{ $customer->due }}</td>
-                        <td><form method="POST" action="/admin/customer/block">
+                          <td>{{ $branch->name }}</td>
+                          <td>{{ $branch->branch_id }}</td>
+                          <td>{{ $branch->zone }}</td>
+                          <td>{{ $branch->completed }}</td>
+                          <td>{{ $branch->pending }}</td>
+                          <td>৳ {{ $branch->balance }}</td>
+                          <td><form method="POST" action="/admin/branch/close">
                             @csrf
-                               <input name="id" type="hidden" value="{{ $customer->id }}">
-                               <button type="submit" class="btn btn-sm btn-elegant Mybutton"><i class="fas fa-ban"></i> Block</button>
+                               <input name="id" type="hidden" value="{{ $branch->id }}">
+                               <button type="submit" class="btn btn-sm btn-elegant Mybutton"><i class="fas fa-ban"></i> Close</button>
                             </form>
                         </td>
 
-                      </tr>
+                        </tr>
 
-                        @endforeach
+                          @endforeach
                        
                     </tbody>
                     <tfoot>
                         <tr>
-                          <th>Name</th>
-                            <th>ID</th>
-                            <th>Phone</th>
-                            <th>Shipments</th>
-                            <th>Paid</th>
-                            <th>Due</th>
-                            <th>Action</th>
+                          <th>Branch</th>
+                          <th>ID</th>
+                          <th>Zone</th>
+                          <th>Completed <i class="far fa-check-circle"></i></th>
+                          <th>Pending <i class="far fa-clock"></i></th>
+                          <th>Earnings</th>
+                          <th>Action</th>
                         </tr>
                     </tfoot>
                 </table>

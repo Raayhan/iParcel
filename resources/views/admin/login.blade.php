@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         
         <div class="col-md-8">
-            <div class="card raleway">
+            <div class="card Poppins">
                 <div class="card-header text-center login-card"><i class="fas fa-unlock-alt"></i> &nbsp;{{ __('Admin Login') }}</div>
                 <div class="card-body" style="padding-top:10%;padding-bottom:10%;">
                         {{-- Success Alert --}}
