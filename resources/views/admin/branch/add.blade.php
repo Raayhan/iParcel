@@ -217,12 +217,15 @@
                                     @enderror
                                       </div>
                                     <div class="form-group">
-                                        <select class="form-control" name="zone">
-                                            <option class="hidden"  selected disabled>Select Zone</option>
-                                            <option value="Dhaka">Dhaka</option>
-                                            <option value="Chittagong">Chittagong</option>
-                                            <option value="Sylhet">Sylhet</option>
-                                            <option value="Comilla">Comilla</option>
+                                        <select class="form-control" name="zone"required>
+                                          <option class="hidden"  selected disabled>Select Zone</option>
+                                          <option value="Dhaka">Dhaka</option>
+                                          <option value="Chittagong">Chittagong</option>
+                                          <option value="Sylhet">Sylhet</option>
+                                          <option value="Comilla">Comilla</option>
+                                          <option value="Khulna">Khulna</option>
+                                          <option value="Barishal">Barishal</option>
+                                          <option value="Rangpur">Rangpur</option>
                                             
                                         </select>
                                     </div>

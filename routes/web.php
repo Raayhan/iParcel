@@ -47,7 +47,15 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
 
       Route::get('/profile/complete',[App\Http\Controllers\Customer\Profile\CompleteProfileController::class,'CompleteForm'])->middleware('customer')->name('CompleteForm');
       Route::post('/profile/complete', [App\Http\Controllers\Customer\Profile\CompleteProfileController::class,'CompleteProfile']);
-  });
+  
+      //Parcel Routes
+
+      Route::get('/parcel/request',[App\Http\Controllers\Customer\Parcel\RequestController::class,'ViewRequestForm'])->middleware('customer')->name('RequestForm');
+      Route::post('/parcel/request',[App\Http\Controllers\Customer\Parcel\RequestController::class,'ViewConfirmation'])->middleware('customer')->name('Confirmation');
+
+  
+  
+    });
   
   
 

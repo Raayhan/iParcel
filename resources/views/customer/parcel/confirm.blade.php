@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('pagetitle', 'Dashboard')
+@section('pagetitle', 'Confirm Request')
 @section('styles')
 <link href="{{ asset('css/vendor/admin.min.css') }}" rel="stylesheet">
 @stop
@@ -21,7 +21,7 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="/customer/dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>DASHBOARD</span></a>
@@ -36,7 +36,7 @@
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Parcel" aria-expanded="true" aria-controls="Branch">
             <i class="fas fa-box-open"></i>
           <span>PARCEL</span>
@@ -121,18 +121,34 @@
               <div class="container-fluid py-4">
 
                  
-                  @if (session('status'))
-                       <div class="alert alert-success text-center" role="alert">
-                            {{ session('status') }}
-                       </div>
-                  @endif
-                  <!-- Content Row -->
-                  <div class="row">
-                 </div>
+                    <!-- Page Heading -->
+          <h4 class="h4 mb-4 text-gray-800 text-center">Confirm Your Request</h4>
+            
+          <div class="card Poppins">
+            <div class="card-header font-weight-bold"></div>
+              <div class="card-body branch_add">
+             
+                <span>Sender Name : {{$sender_name}}</span><br><hr>
+                <span>Sender Phone : {{$sender_phone}}</span><br><hr>
+                <span>Sender Address : {{$sender_address}}</span><br><hr>
+                <span>Recipient Name : {{$recipient_name}}</span><br><hr>
+                <span>Recipient Phone : {{$recipient_phone}}</span><br><hr>
+                <span>Recipient Address : {{$recipient_address}}</span><br><hr>
+                <span>Details : {{$details}}</span><br><hr>
+                <span>Type : {{$type}}</span><br><hr>
+                <span>Delivery : {{$delivery}}</span><br><hr>
+                <span>Amount : {{$amount}}</span><br><hr>
+
+          
+                
+                  </div>
+                  </div>
+                </div>
+              </div>
+
               </div>
           </div>
-    </div>
-</div>
+   
 @section('scripts')
     <script src="{{asset('js/vendor/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/vendor/admin.js')}}"></script>
