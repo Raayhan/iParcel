@@ -52,6 +52,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
 
       Route::get('/parcel/request',[App\Http\Controllers\Customer\Parcel\RequestController::class,'ViewRequestForm'])->middleware('customer')->name('RequestForm');
       Route::post('/parcel/request',[App\Http\Controllers\Customer\Parcel\RequestController::class,'ViewConfirmation'])->middleware('customer')->name('Confirmation');
+      Route::post('/parcel/confirm',[App\Http\Controllers\Customer\Parcel\RequestController::class,'MakeRequest'])->middleware('customer')->name('Request');
 
   
   

@@ -122,22 +122,94 @@
 
                  
                     <!-- Page Heading -->
-          <h4 class="h4 mb-4 text-gray-800 text-center">Confirm Your Request</h4>
+          
             
           <div class="card Poppins">
             <div class="card-header font-weight-bold"></div>
               <div class="card-body branch_add">
              
-                <span>Sender Name : {{$sender_name}}</span><br><hr>
-                <span>Sender Phone : {{$sender_phone}}</span><br><hr>
-                <span>Sender Address : {{$sender_address}}</span><br><hr>
-                <span>Recipient Name : {{$recipient_name}}</span><br><hr>
-                <span>Recipient Phone : {{$recipient_phone}}</span><br><hr>
-                <span>Recipient Address : {{$recipient_address}}</span><br><hr>
-                <span>Details : {{$details}}</span><br><hr>
-                <span>Type : {{$type}}</span><br><hr>
-                <span>Delivery : {{$delivery}}</span><br><hr>
-                <span>Amount : {{$amount}}</span><br><hr>
+                <div class="row mb-4">
+                  <div class="col-md-10">
+                    <img style="max-width:20%!important;text-align:left;" src="{{ asset('img/logo.png') }}" alt="">
+                  </div>
+                  <div class="col-md-2 small">
+                    <span>REQUEST ID :</span><span class="mdb-color-text" style="font-weight:bold;"> 1100120</span>
+                  </div>
+                </div>
+                <div class="row justify-content-center Poppins mb-4">
+
+                  <h5 class="mdb-color-text font-weight-bold">Request Summary</h5>
+
+                </div><hr>
+                <div class="row justify-content-center mb-4">
+                  <div class="col-md-4">
+                    <h6 class="font-weight-bold" ><i class="fas fa-user-check"></i> Sender Informations</h6><hr>
+                    <div class="small">
+                    <span class="font-weight-bold"> Name : </span><span>{{$sender_name}}</span><br>
+                    <span class="font-weight-bold"> Phone : </span><span>{{$sender_phone}}</span><br>
+                    <span class="font-weight-bold"> Address : </span><span>{{$sender_address}}</span>
+                    <hr>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    
+                    <h6 class="font-weight-bold" ><i class="fas fa-user-tag"></i> Recipient Informations</h6><hr>
+                    <div class="small">
+                      <span class="font-weight-bold"> Name : </span><span>{{$recipient_name}}</span><br>
+                      <span class="font-weight-bold"> Phone : </span><span>{{$recipient_phone}}</span><br>
+                      <span class="font-weight-bold"> Address : </span><span>{{$recipient_address}}</span>
+                      <hr>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="font-weight-bold" ><i class="fas fa-box-open"></i> Parcel Informations</h6><hr>
+                    <div class="small">
+                      <span class="font-weight-bold"> Zone : </span><span>{{$zone}}</span><br>
+                    <span class="font-weight-bold"> Description : </span><span>{{$details}}</span><br>
+                    <span class="font-weight-bold"> Type : </span><span>{{$type}}</span><br>
+                    <span class="font-weight-bold"> Delivery : </span><span>{{$delivery}}</span>
+                    <hr>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    
+                       <span class="h5 raleway">Charge : </span><span class="h5 font-weight-bold mdb-color-text"> &nbsp;{{$amount}}.00৳</span>
+                    
+                  </div>
+                  <div class="col-md-6">
+                    <div class="d-flex flex-row-reverse">
+                      <div class="p-6">
+                       
+                        <form action="/customer/parcel/confirm" method="POST">
+                          @csrf
+                          <input type="hidden" name="parcel_id" value="110101">
+                          <input type="hidden" name="sender_name" value="{{$sender_name}}">
+                          <input type="hidden" name="sender_phone" value="{{$sender_phone}}">
+                          <input type="hidden" name="sender_address" value="{{$sender_address}}">
+                          <input type="hidden" name="recipient_name" value="{{$recipient_name}}">
+                          <input type="hidden" name="recipient_phone" value="{{$recipient_phone}}">
+                          <input type="hidden" name="recipient_address" value="{{$recipient_address}}">
+                          <input type="hidden" name="zone" value="{{$zone}}">
+                          <input type="hidden" name="type" value="{{$type}}">
+                          <input type="hidden" name="delivery" value="{{$delivery}}">
+                          <input type="hidden" name="details" value="{{$details}}">
+                          <input type="hidden" name="notes" value="{{$notes}}">
+                          <input type="hidden" name="amount" value="{{$amount}}">
+
+
+
+                          <input type="submit" class="btn btn-dark-green btn-sm"   value="CONFIRM"/>
+                        </form>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  
+                </div>
+
+
 
           
                 

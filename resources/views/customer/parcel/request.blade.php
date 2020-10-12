@@ -150,7 +150,7 @@
                 <form method="POST" action="/customer/parcel/request">
                 @csrf
                   <h5 class="font-weight-bold">Parcel Informations</h5><HR>
-                  <div class="row register-form mb-4">
+                  <div class="row register-form mb-2">
                  
                      
                     
@@ -192,9 +192,9 @@
                         <div class="form-group">
                           <select class="form-control" name="type"required>
                             <option class="hidden"  selected disabled>Parcel Type</option>
-                            <option value="Small">Small (< 1Kg)</option>
-                            <option value="Medium">Medium (< 5Kg)</option>
-                            <option value="Large">Large (< 10Kg)</option>
+                            <option value="Small">Small (< 5Kg)</option>
+                            <option value="Medium">Medium (< 10Kg)</option>
+                            <option value="Large">Large (10Kg+)</option>
                             
                             
                         </select>
@@ -207,10 +207,76 @@
                           <textarea class="form-control" rows=3 type="text" name="details" placeholder="Parcel Description (What's inside,color,condition etc.)"autofocus></textarea>
                         </div>
                       </div>
-                      
+                     
+                       
 
                      
                     </div>
+
+                    <div class="row register-form mb-4">
+                      <div class="col">
+                        <button type="button" class="btn btn-default btn-sm text-white" data-toggle="modal" data-target="#basicExampleModal">
+                          View Delivery Charges
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content Poppins">
+                            <div class="modal-header text-center">
+                              <h5 class="modal-title font-weight-bold small" id="exampleModalLabel">Delivery Charges</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              
+                                
+                                
+                                  <table class="table table-striped table-bordered table-sm" style="text-align:center!important;">
+                                    <thead class="primary-color white-text">
+                                      <tr>
+                                        <th scope="col">Type/Delivery</th>
+                                        <th scope="col">Regular</th>
+                                        <th scope="col">Express</th>
+                                        <th scope="col">Super Express</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">Small (< 5Kg)</th>
+                                        <td>50.00</td>
+                                        <td>80.00</td>
+                                        <td>140.00</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Medium (< 10Kg)</th>
+                                        <td>70.00</td>
+                                        <td>100.00</td>
+                                        <td>160.00</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Large (10Kg+)</th>
+                                        <td>110.00</td>
+                                        <td>140.00</td>
+                                        <td>200.00</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">CLOSE</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                   
+                  </div>
+
 
                     <h5 class="font-weight-bold">Recipient Informations</h5><HR>
                       <div class="row register-form mb-2">
@@ -227,6 +293,7 @@
                           <div class="form-group">
                             <textarea class="form-control" rows=2 type="text" name="recipient_address" placeholder="Recipient Address"></textarea>
                           </div>
+                          
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
@@ -247,14 +314,18 @@
 
                       </div>
                     <div class="d-flex flex-row-reverse">
-                      <div class="p-4">
+                      <div class="p-6">
+                       
                           <input type="submit" class="btn btn-unique" style="margin-top:20%;"  value="SUBMIT"/>
                       </div>
                       
                     </div>
+
                     </form>
+                    
                   </div>
                   </div>
+                  
                 </div>
               </div>
 
