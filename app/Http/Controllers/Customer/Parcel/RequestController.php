@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Customer;
 use App\Models\Shipment;
 
+
 class RequestController extends Controller
 {
     
@@ -64,6 +65,8 @@ class RequestController extends Controller
 
 
         $amount = $type_value + $delivery_value;
+
+        $parcel_id =110101+Shipment::count();
         return view('customer.parcel.confirm',['sender_name'=>$sender_name,
                                                'sender_phone'=>$sender_phone,
                                                'sender_address'=>$sender_address,
@@ -75,7 +78,8 @@ class RequestController extends Controller
                                                'delivery'=>$delivery,
                                                'type'=>$type,
                                                'details'=>$details,
-                                               'amount'=>$amount]);
+                                               'amount'=>$amount,
+                                               'parcel_id'=>$parcel_id]);
 
 
 

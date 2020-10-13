@@ -133,14 +133,22 @@
                     <img style="max-width:20%!important;text-align:left;" src="{{ asset('img/logo.png') }}" alt="">
                   </div>
                   <div class="col-md-2 small">
-                    <span>REQUEST ID :</span><span class="mdb-color-text" style="font-weight:bold;"> 1100120</span>
+                  <span>REQUEST ID :</span><span class="mdb-color-text" style="font-weight:bold;"> &nbsp;{{$parcel_id}}</span>
                   </div>
                 </div>
                 <div class="row justify-content-center Poppins mb-4">
 
                   <h5 class="mdb-color-text font-weight-bold">Request Summary</h5>
 
-                </div><hr>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="barcode">
+                  
+                    {!! DNS1D::getBarcodeHTML($parcel_id, "C128",1.4,22) !!}
+                    <p class="small text-center">ID-{{$parcel_id}}</p>
+                </div>
+                </div>
+                <hr>
                 <div class="row justify-content-center mb-4">
                   <div class="col-md-4">
                     <h6 class="font-weight-bold" ><i class="fas fa-user-check"></i> Sender Informations</h6><hr>
@@ -184,7 +192,7 @@
                        
                         <form action="/customer/parcel/confirm" method="POST">
                           @csrf
-                          <input type="hidden" name="parcel_id" value="110101">
+                        <input type="hidden" name="parcel_id" value="{{$parcel_id}}">
                           <input type="hidden" name="sender_name" value="{{$sender_name}}">
                           <input type="hidden" name="sender_phone" value="{{$sender_phone}}">
                           <input type="hidden" name="sender_address" value="{{$sender_address}}">
@@ -200,7 +208,7 @@
 
 
 
-                          <input type="submit" class="btn btn-dark-green btn-sm"   value="CONFIRM"/>
+                          <input type="submit" class="btn btn-dark-green"   value="CONFIRM"/>
                         </form>
                       </div>
                       
