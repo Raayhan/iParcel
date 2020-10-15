@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Branch;
 use App\Models\Customer;
+use App\Models\Shipment;
 class DashboardController extends Controller
 {
    
@@ -22,7 +23,7 @@ class DashboardController extends Controller
         $branch = Branch::count();
         $customer = Customer::count();
         $completed = Branch::sum('completed');
-        $pending = Branch::sum('pending');
+        $pending = Shipment::where('status', 'Requested,Pending Approval')->count();
         return view('admin.dashboard',['branch'=>$branch,'customer'=>$customer,'completed'=>$completed,'pending'=>$pending]);
     }
 }

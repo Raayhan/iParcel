@@ -45,7 +45,7 @@
           <div class="py-2 collapse-inner rounded">
             
             <a class="collapse-item" href="/customer/parcel/request"><i class="fas fa-calendar-plus"></i> &nbsp;Request Parcel</a>
-            <a class="collapse-item" href="/customer/parcel/live"><i class="fas fa-eye"></i> &nbsp;Live Status</a>
+            <a class="collapse-item" href="/customer/parcel/status"><i class="fas fa-eye"></i> &nbsp;Check Status</a>
             <a class="collapse-item" href="/customer/parcel/all"><i class="fas fa-list-ul"></i> &nbsp;All Parcels</a>
             
           </div>
