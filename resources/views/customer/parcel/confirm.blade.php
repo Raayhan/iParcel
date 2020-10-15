@@ -145,7 +145,7 @@
                   <div class="barcode">
                   
                     {!! DNS1D::getBarcodeHTML($parcel_id, "C128",1.4,22) !!}
-                    <p class="small text-center">ID-{{$parcel_id}}</p>
+                    <p class="small text-center">{{$parcel_id}}</p>
                 </div>
                 </div>
                 <hr>
@@ -203,6 +203,7 @@
                           <input type="hidden" name="type" value="{{$type}}">
                           <input type="hidden" name="delivery" value="{{$delivery}}">
                           <input type="hidden" name="details" value="{{$details}}">
+                          <input type="hidden" name="status" value="Requested,Pending Approval">
                           <input type="hidden" name="notes" value="{{$notes}}">
                           <input type="hidden" name="amount" value="{{$amount}}">
 

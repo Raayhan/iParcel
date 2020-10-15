@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Customer;
 use App\Models\Shipment;
-
+use Illuminate\Support\Facades\DB;
 
 class RequestController extends Controller
 {
@@ -66,7 +66,7 @@ class RequestController extends Controller
 
         $amount = $type_value + $delivery_value;
 
-        $parcel_id =110101+Shipment::count();
+        $parcel_id =1102020100+Shipment::count();
         return view('customer.parcel.confirm',['sender_name'=>$sender_name,
                                                'sender_phone'=>$sender_phone,
                                                'sender_address'=>$sender_address,
@@ -106,15 +106,25 @@ class RequestController extends Controller
         $shipment->delivery  = $request->input('delivery');
         $shipment->type      = $request->input('type');
         $shipment->details   = $request->input('details');
+        $shipment->status    = $request->input('status');
         $shipment->amount    = $request->input('amount');
 
        $shipment->save();
-       return redirect()->to('/customer/parcel/request')->with('status','Request has been created');
+       return redirect()->to('/customer/parcel/all')->with('status','Request has been sent');
 
 
 
 
 
+
+    }
+
+    public function DeleteRequest(Request $request){
+
+        $id = $request->input('id');
+        $shipment = Shipment::findOrFail($id);
+        DB::table('shipments')->where('id', '=', $id)->delete();
+        return redirect()->to('/customer/parcel/all')->with('error','Parcel Deleted');
 
     }
 

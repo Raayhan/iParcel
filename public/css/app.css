@@ -148,6 +148,13 @@ color:white!important;
   padding-right: 7%!important;
 
 }
+.SmallButton{
+  margin:0px!important;
+  padding:4px!important;
+}
+.parcel hr{
+  margin:0!important;
+}
 
 .raleway{
   font-family: 'Raleway', sans-serif;

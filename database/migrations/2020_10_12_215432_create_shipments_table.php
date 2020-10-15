@@ -27,6 +27,7 @@ class CreateShipmentsTable extends Migration
             $table->string('notes')->nullable();
             $table->string('type');
             $table->string('delivery');
+            $table->string('status');
             $table->decimal('amount');
             $table->timestamps();
         });

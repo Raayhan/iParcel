@@ -122,7 +122,7 @@
 
                  
                     <!-- Page Heading -->
-         <div class="card mb-2" style="padding:2%; background-color: #37f2ff21;">
+         <div class="card mb-2 Poopins" style="padding:2%; background-color: #b5f2f721;">
           <h4 class="h4 text-center" style="padding-top:5px;">Create Parcel Delivery Request</h4>
          </div>
          
@@ -205,11 +205,19 @@
                          
                        
                       </div>
-                      <div class="col">
-                        <div class="form-group">
-                          <textarea class="form-control" rows=3 type="text" name="details" placeholder="Parcel Description (What's inside,color,condition etc.)"autofocus></textarea>
+                      
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <textarea class="form-control" rows=2 type="text" name="details" placeholder="Parcel Description (What's inside,color,condition etc.)"autofocus></textarea>
+                          </div>
                         </div>
-                      </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <textarea class="form-control" rows=2 type="text" name="sender_address" placeholder="Parcel Pickup Address"></textarea>
+                          </div>
+                        </div>
+                     
+                      
                      
                        
 
@@ -313,7 +321,7 @@
                         </div>
                        <input type="hidden" name="sender_name" value="{{Auth::guard('customer')->user()->name}}">
                        <input type="hidden" name="sender_phone" value="{{Auth::guard('customer')->user()->phone}}">
-                       <input type="hidden" name="sender_address" value="{{Auth::guard('customer')->user()->address}}">
+                      
 
                       </div>
                     <div class="d-flex flex-row-reverse">

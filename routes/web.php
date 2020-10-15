@@ -53,6 +53,9 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
       Route::get('/parcel/request',[App\Http\Controllers\Customer\Parcel\RequestController::class,'ViewRequestForm'])->middleware('customer')->name('RequestForm');
       Route::post('/parcel/request',[App\Http\Controllers\Customer\Parcel\RequestController::class,'ViewConfirmation'])->middleware('customer')->name('Confirmation');
       Route::post('/parcel/confirm',[App\Http\Controllers\Customer\Parcel\RequestController::class,'MakeRequest'])->middleware('customer')->name('Request');
+      Route::get('/parcel/all',[App\Http\Controllers\Customer\Parcel\ViewParcelsController::class,'ViewAllParcel'])->middleware('customer')->name('ViewAllParcel');
+      Route::get('/parcel/view',[App\Http\Controllers\Customer\Parcel\ViewParcelsController::class,'ViewParcel'])->middleware('customer')->name('ViewParcel');
+      Route::post('/parcel/all',[App\Http\Controllers\Customer\Parcel\RequestController::class,'DeleteRequest'])->middleware('customer');
 
   
   
