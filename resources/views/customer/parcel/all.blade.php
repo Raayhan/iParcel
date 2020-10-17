@@ -46,7 +46,7 @@
           <div class="py-2 collapse-inner rounded">
             
             <a class="collapse-item" href="/customer/parcel/request"><i class="fas fa-calendar-plus"></i> &nbsp;Request Parcel</a>
-            <a class="collapse-item" href="/customer/parcel/status"><i class="fas fa-eye"></i> &nbsp;Check Status</a>
+            <a class="collapse-item" href="/customer/parcel/check"><i class="fas fa-eye"></i> &nbsp;Check Status</a>
             <a class="collapse-item" href="/customer/parcel/all"><i class="fas fa-list-ul"></i> &nbsp;All Parcels</a>
             
           </div>
@@ -182,7 +182,7 @@
                                             <form action="/customer/parcel/view" method="GET">
                                           
                                               <input type="hidden" name="parcel_id" value="{{$shipment->parcel_id}}">
-                                              <button title="View Details" type="submit" class="btn btn-primary btn-sm SmallButton">View</button>
+                                              <input title="View Details" type="submit" class="small" value="View">
                                           </form>
                                         </td>
                                         <td>
@@ -191,7 +191,7 @@
 
                                               @csrf
                                               <input type="hidden" name="id" value="{{$shipment->id}}">
-                                              <button title="Delete Request" type="submit" class="btn btn-danger btn-sm SmallButton">Delete</button>
+                                              <input title="Delete Request" type="submit" class="small" value="Delete">
                                           </form>
                                          
                                        
