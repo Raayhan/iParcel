@@ -118,7 +118,16 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
       Route::get('/login',[App\Http\Controllers\Admin\Auth\LoginController::class,'showLoginForm'])->name('login');
       Route::post('/login',[App\Http\Controllers\Admin\Auth\LoginController::class,'login']);
       Route::post('/logout',[App\Http\Controllers\Admin\Auth\LoginController::class,'logout'])->name('logout');
-  });
+ 
+      //Shipment Routes
+      Route::get('/shipment/request',[App\Http\Controllers\Admin\Shipment\RequestController::class,'ShowRequest'])->name('ShowRequest')->middleware('admin');
+      Route::post('/shipment/request',[App\Http\Controllers\Admin\Shipment\RequestController::class,'RequestHandel'])->middleware('admin');
+  
+  
+  
+  
+  
+    });
     
 
  
