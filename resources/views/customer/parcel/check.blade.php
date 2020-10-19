@@ -128,6 +128,25 @@
                         </div>
                     </div>
                     <div class="card-body" style="padding-top:12%;height:80vh;">
+                                    {{-- Success Alert --}}
+                                    @if(session('status'))
+                                    <div class="alert alert-success alert-dismissible fade show text-center font-weight-bold small" role="alert">
+                                        {{session('status')}}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                @endif
+        
+                                {{-- Error Alert --}}
+                                @if(session('error'))
+                                        <div class="alert alert-danger alert-dismissible fade show text-center font-weight-bold small" role="alert">
+                                            {{session('error')}}
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                @endif
                       <div class="row justify-content-center mb-4">
                         <h5 class="mdb-color-text"><i class="fas fa-search"></i> Check status of your Parcel</h5>
                       </div>
@@ -137,7 +156,7 @@
                             @csrf
                         
                             <div class="form-group row">
-                                <label for="id" class="col-md-4 col-form-label text-md-right">{{ __('Parcel ID') }}</label>
+                                <label for="parcel_id" class="col-md-4 col-form-label text-md-right">{{ __('Parcel ID') }}</label>
     
                                 <div class="col-md-4">
                                     <input id="parcel_id" type="text" class="form-control @error('parcel_id') is-invalid @enderror" name="parcel_id"autofocus>
@@ -169,7 +188,7 @@
                         </form>
 
                         <div class="row justify-content-center">
-                          <span class="mdb-color-text">Enter your parcel ID & find the current status of your parcel</span>
+                          <span class="mdb-color-text">Enter your parcel ID & view the current status of your parcel</span>
                         </div>
                        
 
