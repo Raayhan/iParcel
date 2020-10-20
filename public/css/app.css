@@ -155,7 +155,9 @@ color:white!important;
 .parcel hr{
   margin:0!important;
 }
-
+.small-table{
+font-size:12px!important;
+}
 .raleway{
   font-family: 'Raleway', sans-serif;
 }
