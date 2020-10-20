@@ -203,11 +203,11 @@
                      </div>
                  </div>
 
-                 <div class="row">
+                 <div class="row mb-4">
                    <div class="col-md-6">
                     <div class="card border-left-info shadow h-100 py-2">
                       <div class="card-body Poppins">
-                        <h5 class="text-center mdb-color-text mb-4">Want to send A Parcel ?<br><br><i class="fas fa-box-open fa-2x text-gray-500 mb-2"></i></h5>
+                        <h5 class="text-center mdb-color-text mb-4" style="margin-top:5%;">Want to send A Parcel ?<br><br><i class="fas fa-box-open fa-2x text-gray-500 mb-2"></i></h5>
                         <h6 class="small text-center mb-4">Send us a pickup request by filling up the parcel request form</h6>
 
                         <div class="row justify-content-center" style="padding-top:25px!important;">
@@ -219,50 +219,84 @@
                   
                    </div>
                    <div class="col-md-6">
-                    <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card border-left-danger shadow h-100 py-2">
                       <div class="card-body Poppins">
-                        <h6 class="text-center mdb-color-text mb-3">Delivery Charges</h6>
 
-                        <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-sm small-table" style="text-align:center!important;">
-                          <thead class="primary-color white-text text-xsmall">
-                            <tr>
-                              <th class="small-table" scope="col">Type/Delivery</th>
-                              <th class="small-table" scope="col">Regular</th>
-                              <th class="small-table" scope="col">Express</th>
-                              <th class="small-table" scope="col">Super Express</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th class="small-table" scope="row">Small (< 5Kg)</th>
-                              <td class="small-table">50.00</td>
-                              <td class="small-table">80.00</td>
-                              <td class="small-table">140.00</td>
-                            </tr>
-                            <tr>
-                              <th class="small-table" scope="row">Medium (< 10Kg)</th>
-                              <td class="small-table">70.00</td>
-                              <td class="small-table">100.00</td>
-                              <td class="small-table">160.00</td>
-                            </tr>
-                            <tr>
-                              <th class="small-table" scope="row">Large (10Kg+)</th>
-                              <td class="small-table">110.00</td>
-                              <td class="small-table">140.00</td>
-                              <td class="small-table">200.00</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="row justify-content-center">
-                        <button   onclick="window.location.href='/customer/parcel/calculate'" class="btn btn-primary btn-sm text-white" >Calculate Charge</button>
-                      </div>
+                        <div class="row justify-content-center">
+
+                          <h5>Coverage Area</h5>
+                        </div>
+                        <div class="row justify-content-center">
+                          <img style="max-width:30%" src="{{asset('img/map.png')}}" alt="">
+                         </div>
+                         <div class="row justify-content-center">
+                          <button   onclick="window.location.href='/customer/branch/all'" class="btn btn-danger btn-sm text-white" >Branches</button>
+                        </div>
                       </div>
                     </div>
                   
                    </div>
                  </div>
+                 <div class="row">
+                  <div class="col-md-6">
+                   <div class="card border-left-info shadow h-100 py-2">
+                     <div class="card-body Poppins">
+                       <h5 class="text-center mdb-color-text" style="margin-top:5%;">Pay your Charges with<br><br><i class="fas fa-money-check-alt fa-2x text-gray-500 mb-2"></i></h5>
+
+                       <div class="row justify-content-center">
+                        <img style="max-width:40%" src="{{asset('img/Bkash.svg')}}" alt="">
+                       </div>
+                      
+
+                     </div>
+                   </div>
+                 
+                  </div>
+                  <div class="col-md-6">
+                   <div class="card border-left-primary shadow h-100 py-2">
+                     <div class="card-body Poppins">
+                       <h6 class="text-center mdb-color-text mb-3">Delivery Charges</h6>
+
+                       <div class="table-responsive">
+                       <table class="table table-striped table-bordered table-sm small-table" style="text-align:center!important;">
+                         <thead class="primary-color white-text text-xsmall">
+                           <tr>
+                             <th class="small-table" scope="col">Type/Delivery</th>
+                             <th class="small-table" scope="col">Regular</th>
+                             <th class="small-table" scope="col">Express</th>
+                             <th class="small-table" scope="col">Super Express</th>
+                           </tr>
+                         </thead>
+                         <tbody>
+                           <tr>
+                             <th class="small-table" scope="row">Small (< 5Kg)</th>
+                             <td class="small-table">50.00</td>
+                             <td class="small-table">80.00</td>
+                             <td class="small-table">140.00</td>
+                           </tr>
+                           <tr>
+                             <th class="small-table" scope="row">Medium (< 10Kg)</th>
+                             <td class="small-table">70.00</td>
+                             <td class="small-table">100.00</td>
+                             <td class="small-table">160.00</td>
+                           </tr>
+                           <tr>
+                             <th class="small-table" scope="row">Large (10Kg+)</th>
+                             <td class="small-table">110.00</td>
+                             <td class="small-table">140.00</td>
+                             <td class="small-table">200.00</td>
+                           </tr>
+                         </tbody>
+                       </table>
+                     </div>
+                     <div class="row justify-content-center">
+                       <button   onclick="window.location.href='/customer/parcel/calculate'" class="btn btn-primary btn-sm text-white" >Calculate Charge</button>
+                     </div>
+                     </div>
+                   </div>
+                 
+                  </div>
+                </div>
               </div>
           </div>
     </div>
