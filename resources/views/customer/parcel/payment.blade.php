@@ -1,7 +1,6 @@
 @extends('layouts.app')
-@section('pagetitle', 'Check Status')
+@section('pagetitle', 'Payment')
 @section('styles')
-
 <link href="{{ asset('css/vendor/admin.min.css') }}" rel="stylesheet">
 @stop
 @section('content')
@@ -38,7 +37,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item active">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Parcel" aria-expanded="true" aria-controls="shipment">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Parcel" aria-expanded="true" aria-controls="Branch">
             <i class="fas fa-box-open"></i>
           <span>PARCEL</span>
         </a>
@@ -55,14 +54,14 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#shipment" aria-expanded="true" aria-controls="Customer">
-            <i class="fas fa-code-shipment"></i>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Branch" aria-expanded="true" aria-controls="Customer">
+            <i class="fas fa-code-branch"></i>
           <span>BRANCHES</span>
         </a>
-        <div id="shipment" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="Branch" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class=" py-2 collapse-inner rounded">
             
-            <a class="collapse-item" href="\customer\shipment\parcels"><i class="fas fa-list-ul"></i> &nbsp;All shipmentes</a>
+            <a class="collapse-item" href="\customer\branch\all"><i class="fas fa-list-ul"></i> &nbsp;All Branches</a>
            
             
           </div>
@@ -127,96 +126,43 @@
               <div class="container-fluid py-4">
 
                 <div class="card Poppins">
-                    <div class="card-header">
+                    <div class="card-body" style="padding-left:5%;padding-right:5%;">
+                        <h3 class="text-center">Payment</h3><hr>
                         <div class="row justify-content-center">
-                        <span class="font-weight-bold small"></span>
-                        </div>
-                    </div>
-                    <div class="card-body" style="padding-top:12%;height:80vh;">
-                                    {{-- Success Alert --}}
-                                    @if(session('status'))
-                                    <div class="alert alert-success alert-dismissible fade show text-center font-weight-bold small" role="alert">
-                                        {{session('status')}}
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                @endif
-        
-                                {{-- Error Alert --}}
-                                @if(session('error'))
-                                        <div class="alert alert-danger alert-dismissible fade show text-center font-weight-bold small" role="alert">
-                                            {{session('error')}}
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                @endif
-                      <div class="row justify-content-center mb-4">
-                        <h5 class="mdb-color-text"><i class="fas fa-search"></i> Check status of your Parcel</h5>
-                      </div>
-                   
-                        <form action="/customer/parcel/check" method="POST">
-                        
-                            @csrf
-                        
-                            <div class="form-group row">
-                                <label for="parcel_id" class="col-md-4 col-form-label text-md-right">{{ __('Parcel ID') }}</label>
-    
-                                <div class="col-md-4">
-                                    <input id="parcel_id" type="text" class="form-control @error('parcel_id') is-invalid @enderror" name="parcel_id"autofocus>
-    
-                                    @error('parcel_id')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                            <div class="col-md-4">
+                                <div class="row justify-content-center">
+                                    <h6 class="text-center">Payable Amount : </h6><h6 class="font-weight-bold mdb-color-text"> &nbsp;{{$amount}}.00৳</h6>
                                 </div>
                                 
-                                    
-    
-                                   
-                              
                             </div>
-                            <div class="form-group row">
-                                <div class="col-md-4">
-                                    
-                                </div>
-                                <div class="col-md-4">
-                                    <input  type="submit" class="btn btn-indigo MyButton" value="Check">
-                                </div>
-                                <div class="col-md-4">
-                                    
-                                </div>
+                            <div class="col-md-4">
+                               
                             </div>
-
-                        </form>
-
-                        <div class="row justify-content-center">
-                          <span class="mdb-color-text">Enter your parcel ID & view the current status of your parcel</span>
+                            <div class="col-md-4 small">
+                                <div class="row justify-content-center">
+                                    <span>REQUEST ID :</span><span class="mdb-color-text" style="font-weight:bold;"> &nbsp;{{$parcel_id}}</span>
+                                </div>
+                                
+                            </div>
                         </div>
-                       
-
+                        <div class="row justify-content-center">
+                            <img style="max-width:15%" src="{{asset('img/Bkash.svg')}}" alt="">
+                           </div>
+                           <div class="row justify-content-center">
+                              <button class="btn btn-unique">Pay with bKash</button>
+                           </div>
+                    
                     </div>
                 </div>
-
             </div>
         </div>
 
-  </div>
-</div>
+        </div>
+    </div>
 
 @section('scripts')
-<script src="{{ asset('js/vendor/jquery.dataTables.min.js') }}"></script>
 <script src="{{asset('js/vendor/bootstrap.bundle.min.js')}}"></script>
-
 <script src="{{asset('js/vendor/admin.js')}}"></script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-$('#example').DataTable();
-} );
-</script>
 
 
 @stop

@@ -86,6 +86,44 @@ class RequestController extends Controller
 
     }
 
+    public function MakePayment(Request $request){
+
+        $sender_name    = $request->input('sender_name');
+        $sender_phone   = $request->input('sender_phone');
+        $sender_address = $request->input('sender_address');
+
+        $recipient_name    = $request->input('recipient_name');
+        $recipient_phone   = $request->input('recipient_phone');
+        $recipient_address = $request->input('recipient_address');
+        $notes             = $request->input('notes');
+
+
+        $zone     = $request->input('zone');
+        $delivery = $request->input('delivery');
+        $type     = $request->input('type');
+        $details  = $request->input('details');
+        $amount = $request->input('amount');
+        $parcel_id = $request->input('parcel_id');
+
+        return view('customer.parcel.payment',['sender_name'=>$sender_name,
+                                               'sender_phone'=>$sender_phone,
+                                               'sender_address'=>$sender_address,
+                                               'recipient_name'=>$recipient_name,
+                                               'recipient_phone'=>$recipient_phone,
+                                               'recipient_address'=>$recipient_address,
+                                               'notes'=>$notes,
+                                               'zone'=>$zone,
+                                               'delivery'=>$delivery,
+                                               'type'=>$type,
+                                               'details'=>$details,
+                                               'amount'=>$amount,
+                                               'parcel_id'=>$parcel_id]);
+
+
+
+
+    }
+
 
     public function MakeRequest(Request $request){
 

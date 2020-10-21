@@ -85,6 +85,11 @@
           <i class="fas fa-fw fa-dollar-sign"></i>
           <span>PAYMENT HISTORY</span></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="\customer\calculate">
+          <i class="fas fa-coins"></i>
+          <span>CALCULATE CHARGE</span></a>
+      </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
