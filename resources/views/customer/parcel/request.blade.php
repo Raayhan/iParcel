@@ -213,12 +213,24 @@
                       
                         <div class="col-md-6">
                           <div class="form-group">
-                            <textarea class="form-control" rows=2 type="text" name="details" placeholder="Parcel Description (What's inside,color,condition etc.)"autofocus></textarea>
+                            <textarea id="details" class="form-control  @error('details') is-invalid @enderror" rows=2 type="text" name="details" placeholder="Parcel Description (What's inside,color,condition etc.)"autofocus></textarea>
+                          
+                            @error('details')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                            <textarea class="form-control" rows=2 type="text" name="sender_address" placeholder="Parcel Pickup Address"></textarea>
+                            <textarea id="sender_address" class="form-control @error('sender_address') is-invalid @enderror" rows=2 type="text" name="sender_address" placeholder="Parcel Pickup Address"></textarea>
+                            @error('sender_address')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                           </div>
                         </div>
                      
@@ -237,22 +249,28 @@
 
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input id="name" placeholder="Recipient Name" type="text" class="form-control @error('name') is-invalid @enderror" name="recipient_name" value="{{ old('name') }}" required autocomplete="name">
-                            @error('name')
+                            <input id="recipient_name" placeholder="Recipient Name" type="text" class="form-control @error('recipient_name') is-invalid @enderror" name="recipient_name" value="{{ old('recipient_name') }}"autocomplete="recipient_name">
+                            @error('recipient_name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                           </div>
                           <div class="form-group">
-                            <textarea class="form-control" rows=2 type="text" name="recipient_address" placeholder="Recipient Address"></textarea>
+                            <textarea id="recipient_address" class="form-control @error('recipient_address') is-invalid @enderror" rows=2 type="text" name="recipient_address" placeholder="Recipient Address"></textarea>
+                          
+                            @error('recipient_address')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                           </div>
                           
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input type="number"  name="recipient_phone" class="form-control @error('phone') is-invalid @enderror" placeholder="Recipient Phone"  />
-                            @error('phone')
+                            <input id="recipient_phone" type="number"  name="recipient_phone" class="form-control @error('recipient_phone') is-invalid @enderror" placeholder="Recipient Phone"  />
+                            @error('recipient_phone')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

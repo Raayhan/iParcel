@@ -19,7 +19,7 @@ class RequestController extends Controller
 
     public function ViewConfirmation(Request $request){
         
-        //$this->validator($request);
+        $this->validator($request);
 
         $sender_name    = $request->input('sender_name');
         $sender_phone   = $request->input('sender_phone');
@@ -82,6 +82,29 @@ class RequestController extends Controller
                                                'parcel_id'=>$parcel_id]);
 
 
+
+
+    }
+
+    private function validator(Request $request)
+    {
+            //validation rules.
+            $rules = [
+                'details'            => 'required|string|min:10|max:191',
+                'sender_address'     => 'required|string|min:15|max:191',
+                'recipient_name'     => 'required|string|min:5|max:255',
+                'recipient_address'  => 'required|string|min:15|max:255',
+                'recipient_phone'    => 'required|string|min:11|max:11',
+            ];
+
+            //custom validation error messages.
+            $messages = [
+                
+                
+            ];
+
+            //validate the request.
+            $request->validate($rules,$messages);
 
 
     }
