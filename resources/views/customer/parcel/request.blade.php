@@ -127,7 +127,7 @@
 
                  
                     <!-- Page Heading -->
-         <div class="card mb-2 Poopins" style="padding:2%; background-color: #b5f2f721;">
+         <div class="card border-left-primary border-right-cool shadow mb-2 Poopins" style="padding:2%; background-color: #b5f2f721;">
           <h4 class="h4 text-center" style="padding-top:5px;">Create Parcel Delivery Request</h4>
          </div>
          

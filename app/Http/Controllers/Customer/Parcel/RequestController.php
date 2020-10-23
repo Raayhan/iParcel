@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Customer;
 use App\Models\Shipment;
+use App\Models\Order;
 use Illuminate\Support\Facades\DB;
 
 class RequestController extends Controller
@@ -150,6 +151,7 @@ class RequestController extends Controller
 
     public function MakeRequest(Request $request){
 
+        $this->PaymentValidator($request);
         $shipment = new Shipment;
 
         $shipment->sender_name    = $request->input('sender_name');
@@ -171,11 +173,44 @@ class RequestController extends Controller
         $shipment->amount    = $request->input('amount');
 
        $shipment->save();
+
+       $order = new Order;
+       $order->parcel_id = $request->input('parcel_id');
+       $order->sender_name = $request->input('sender_name');
+       $order->sender_phone   = $request->input('sender_phone');
+       $order->delivery  = $request->input('delivery');
+       $order->type      = $request->input('type');
+       $order->payment_status = $request->input('payment_status');
+       $order->bkash_number = $request->input('bkash_number');
+       $order->trxid = $request->input('trxid');
+       $order->amount = $request->input('amount');
+       $order->save();
+
        return redirect()->to('/customer/parcel/all')->with('status','Request has been sent');
 
 
 
 
+
+
+    }
+    private function PaymentValidator(Request $request)
+    {
+            //validation rules.
+            $rules = [
+                'bkash_number'       => 'required|numeric',
+                'trxid'              => 'required|string|min:15|max:18',
+                
+            ];
+
+            //custom validation error messages.
+            $messages = [
+                
+                
+            ];
+
+            //validate the request.
+            $request->validate($rules,$messages);
 
 
     }

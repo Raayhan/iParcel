@@ -6504,6 +6504,10 @@ table.dataTable thead .sorting_desc_disabled:before {
   .border-right {
     border-right: 1px solid #e3e6f0 !important;
   }
+  .border-right-cool {
+    border-right: 5px solid #4e73df !important;
+    
+  }
   
   .border-bottom {
     border-bottom: 1px solid #e3e6f0 !important;

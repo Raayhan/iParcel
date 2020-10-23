@@ -127,7 +127,7 @@
               <div class="container-fluid py-4">
 
                             <!-- Page Heading -->
-         <div class="card mb-2 Poopins" style="padding:2%; background-color: #b5f2f721;">
+         <div class="card border-left-primary border-right-cool shadow mb-2 Poopins" style="padding:2%; background-color: #b5f2f721;">
             <h4 class="h4 text-center" style="padding-top:5px;">All Parcels</h4>
            </div>
                        
@@ -166,12 +166,14 @@
                                         <th>Zone</th>
                                         <th>Catagory</th>
                                         <th>Delivery</th>
+                                        <th>Payment</th>
                                         <th>Action</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                   @foreach($shipments as $shipment)
+                                   @foreach($orders as $order)
             
                                     <tr>
             
@@ -182,12 +184,13 @@
                                       <td>{{ $shipment->zone }}</td>
                                       <td>{{ $shipment->type }}</td>
                                       <td>{{ $shipment->delivery }}</td>
+                                      <td><span style="background-color:#c8e6c9; color:#1b5e20;padding:0.5%;" class="font-weight-bold">&nbsp; {{$order->payment_status}} &nbsp;</span></td>
                                       <td>
                                        
                                             <form action="/customer/parcel/view" method="GET">
                                           
                                               <input type="hidden" name="parcel_id" value="{{$shipment->parcel_id}}">
-                                              <input title="View Details" type="submit" class="small" value="View">
+                                              <input class="btn btn-outline-primary btn-sm view_btn" title="View Details" type="submit" class="small" value="View">
                                           </form>
                                         </td>
                                         <td>
@@ -196,7 +199,7 @@
 
                                               @csrf
                                               <input type="hidden" name="id" value="{{$shipment->id}}">
-                                              <input title="Delete Request" type="submit" class="small" value="Delete">
+                                              <input class="btn btn-outline-danger btn-sm delete_btn" title="Delete Request" type="submit" class="small" value="Delete">
                                           </form>
                                          
                                        
@@ -205,6 +208,7 @@
             
                                     </tr>
             
+                                      @endforeach
                                       @endforeach
                                    
                                 </tbody>
@@ -217,6 +221,7 @@
                                         <th>Zone</th>
                                         <th>Catagory</th>
                                         <th>Delivery</th>
+                                        <th>Payment</th>
                                         <th>Action</th>
                                         <th>Action</th>
                                     </tr>

@@ -126,7 +126,7 @@
               <div class="container-fluid py-4">
 
                 <div class="card Poppins">
-                    <div class="card-body" style="padding-left:5%;padding-right:5%;">
+                    <div class="card-body" style="height:100vh;padding-left:5%;padding-right:5%;">
                         <h3 class="text-center">Payment</h3><hr>
                         <div class="row justify-content-center">
                             <div class="col-md-4">
@@ -149,8 +149,72 @@
                             <img style="max-width:15%" src="{{asset('img/Bkash.svg')}}" alt="">
                            </div>
                            <div class="row justify-content-center">
-                              <button class="btn btn-unique">Pay with bKash</button>
+                            <div class="col">
+                              <h6 class="text-center">Please Pay {{$amount}}.00৳ to the below bKash merchant number</h6>
+                            </div>
+                          
+                           
+                            
+                         </div>
+                         <div class="row justify-content-center mb-4">
+                            
+                          <h5 class="font-weight-bold">01675613100</h5>
+                          
+                           
+                        </div>
+                       <form action="/customer/parcel/confirm" method="POST">
+                        @csrf
+                       
+                        <div class="row justify-content-center" style="margin-top:5%;">
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <input id="bkash_number" type="text"  name="bkash_number" class="form-control @error('bkash_number') is-invalid @enderror" placeholder="bKash Account Number"autofocus  />
+                              @error('bkash_number')
+                              <span class="invalid-feedback" role="alert">
+                                  <strong>{{ $message }}</strong>
+                              </span>
+                          @enderror
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="row justify-content-center mb-4">
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <input id="trxid" type="text"  name="trxid" class="form-control @error('trxid') is-invalid @enderror" placeholder="TrxID Number"  />
+                              @error('trxid')
+                              <span class="invalid-feedback" role="alert">
+                                  <strong>{{ $message }}</strong>
+                              </span>
+                          @enderror
+                            </div>
+                          </div>
+                        </div>
+
+                        
+                           <div class="row justify-content-center">
+                             <div class="col-md-4">
+                              
+                              <input type="hidden" name="parcel_id" value="{{$parcel_id}}">
+                                <input type="hidden" name="sender_name" value="{{$sender_name}}">
+                                <input type="hidden" name="sender_phone" value="{{$sender_phone}}">
+                                <input type="hidden" name="sender_address" value="{{$sender_address}}">
+                                <input type="hidden" name="recipient_name" value="{{$recipient_name}}">
+                                <input type="hidden" name="recipient_phone" value="{{$recipient_phone}}">
+                                <input type="hidden" name="recipient_address" value="{{$recipient_address}}">
+                                <input type="hidden" name="zone" value="{{$zone}}">
+                                <input type="hidden" name="type" value="{{$type}}">
+                                <input type="hidden" name="delivery" value="{{$delivery}}">
+                                <input type="hidden" name="details" value="{{$details}}">
+                                <input type="hidden" name="status" value="Requested,Pending Approval">
+                                <input type="hidden" name="notes" value="{{$notes}}">
+                                <input type="hidden" name="payment_status" value="Paid">
+                                <input type="hidden" name="amount" value="{{$amount}}">
+                              <button type="submit" class="btn btn-unique btn-block">Verify</button>
+                             </div>
+                             
                            </div>
+                          </form>
                     
                     </div>
                 </div>

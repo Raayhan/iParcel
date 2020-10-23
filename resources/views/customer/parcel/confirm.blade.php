@@ -195,7 +195,7 @@
                     <div class="d-flex flex-row-reverse">
                       <div class="p-6">
                        
-                        <form action="/customer/parcel/confirm" method="POST">
+                        <form action="/customer/parcel/confirm" method="GET">
                           @csrf
                         <input type="hidden" name="parcel_id" value="{{$parcel_id}}">
                           <input type="hidden" name="sender_name" value="{{$sender_name}}">
