@@ -186,6 +186,13 @@ class RequestController extends Controller
        $order->amount = $request->input('amount');
        $order->save();
 
+       $id= $request->input('id');
+       $balance = $request->input('balance');
+       $customer = Customer::findOrFail($id);
+       $customer->balance= ($request->input('amount')+ $balance);
+       $customer->save();
+
+
        return redirect()->to('/customer/parcel/all')->with('status','Request has been sent');
 
 
