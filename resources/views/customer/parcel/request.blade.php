@@ -225,14 +225,28 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                            <textarea id="sender_address" class="form-control @error('sender_address') is-invalid @enderror" rows=2 type="text" name="sender_address" placeholder="Parcel Pickup Address"></textarea>
-                            @error('sender_address')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                          </div>
+                           
+                            <div class="row">
+                              <div class="col">
+                                <input id="sender_address" class="form-control @error('sender_address') is-invalid @enderror" type="text" placeholder="Pickup Address"name="sender_address"/>
+                                @error('sender_address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                 @enderror
+                              </div>
+                             
+                            </div>
+                            <div class="row justify-content-center">
+                              <div class="col">
+                                <button type="button" class="small_btn" onclick="myFunction()">SELECT DEFAULT ADDRESS</button>
+                              </div>
+                             
+                            </div>
+
+
                         </div>
+                      </div>
                      
                       
                      
@@ -308,6 +322,11 @@
     <script src="{{asset('js/vendor/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/vendor/admin.js')}}"></script>
    
-    
+    <script>
+      function myFunction() {
+        document.getElementById("sender_address").defaultValue ="{{Auth::guard('customer')->user()->address}}";
+      }
+      </script>
+        
 @stop
 @endsection

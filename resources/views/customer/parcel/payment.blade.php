@@ -192,7 +192,7 @@
                         </div>
 
                         
-                           <div class="row justify-content-center">
+                           <div class="row justify-content-center mb-2">
                              <div class="col-md-4">
                               
                               <input type="hidden" name="parcel_id" value="{{$parcel_id}}">
@@ -213,11 +213,17 @@
                                 <input type="hidden" name="balance" value="{{Auth::guard('customer')->user()->balance}}">
                                 <input type="hidden" name="id" value="{{Auth::guard('customer')->user()->id}}">
 
-                              <button type="submit" class="btn btn-unique btn-block">Verify</button>
+                              <button type="submit" class="btn btn-unique btn-block">SUBMIT</button>
                              </div>
+                             
                              
                            </div>
                           </form>
+                          <div class="row justify-content-center">
+                            <div class="col-md-4">
+                              <button type="submit" class="small_btn">Procced without payment <i class="fas fa-sign-out-alt"></i></button>
+                            </div>
+                          </div>
                     
                     </div>
                 </div>

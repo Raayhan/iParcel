@@ -184,6 +184,15 @@ font-size:12px!important;
   background-color: var(--danger)!important;
   color:white!important; 
 }
+.small_btn{
+  background-color: var(--primary);
+  color:white;
+  border: none;
+  border-radius: 4px;
+  font-size: 10px;
+  margin-top:7px;
+  
+}
 .raleway{
   font-family: 'Raleway', sans-serif;
 }

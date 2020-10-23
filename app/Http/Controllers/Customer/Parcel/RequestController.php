@@ -206,13 +206,13 @@ class RequestController extends Controller
             //validation rules.
             $rules = [
                 'bkash_number'       => 'required|numeric',
-                'trxid'              => 'required|string|min:15|max:18',
+                'trxid'              => 'required|string|unique:orders|min:15|max:18',
                 
             ];
 
             //custom validation error messages.
             $messages = [
-                
+                'trxid.unique' =>'TrxID is not valid'
                 
             ];
 
