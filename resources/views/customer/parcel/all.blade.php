@@ -198,7 +198,9 @@
                                             <form action="/customer/parcel/all" method="POST">
 
                                               @csrf
-                                              <input type="hidden" name="id" value="{{$shipment->id}}">
+                                              <input type="hidden" name="shipment_id" value="{{$shipment->id}}">
+                                              <input type="hidden" name="order_id" value="{{$order->id}}">
+
                                               <input class="btn btn-outline-danger btn-sm delete_btn" title="Delete Request" type="submit" class="small" value="Delete">
                                           </form>
                                          

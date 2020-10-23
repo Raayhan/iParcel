@@ -224,9 +224,12 @@ class RequestController extends Controller
 
     public function DeleteRequest(Request $request){
 
-        $id = $request->input('id');
-        $shipment = Shipment::findOrFail($id);
-        DB::table('shipments')->where('id', '=', $id)->delete();
+        $shipment_id = $request->input('shipment_id');
+        $order_id = $request->input('order_id');
+        $shipment = Shipment::findOrFail($shipment_id);
+        DB::table('shipments')->where('id', '=', $shipment_id)->delete();
+        $order = Order::findOrFail($order_id);
+        DB::table('orders')->where('id', '=', $order_id)->delete();
         return redirect()->to('/customer/parcel/all')->with('error','Parcel Deleted');
 
     }
