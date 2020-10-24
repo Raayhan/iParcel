@@ -295,7 +295,7 @@
                        </table>
                      </div>
                      <div class="row justify-content-center">
-                       <button   onclick="window.location.href='/customer/parcel/calculate'" class="btn btn-primary btn-sm text-white" >Calculate Charge</button>
+                       <button   onclick="window.location.href='/customer/calculate'" class="btn btn-primary btn-sm text-white" >Calculate Charge</button>
                      </div>
                      </div>
                    </div>

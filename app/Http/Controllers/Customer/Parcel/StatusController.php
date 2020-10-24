@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Customer\Parcel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Shipment;
-use Illuminate\Support\Facades\DB;
+use App\Models\Order;
 
+use Illuminate\Support\Facades\DB;
+use Auth;
 
 class StatusController extends Controller
 {
@@ -19,7 +21,7 @@ class StatusController extends Controller
         $this->validator($request);
         $parcel_id = $request->input('parcel_id');
 
-
+        $phone = Auth::guard('customer')->user()->phone;
        
         $querry = Shipment::where('parcel_id', '=',$parcel_id)->select('id','parcel_id','sender_name','sender_phone','sender_address','recipient_name','recipient_phone','recipient_address','zone','created_at','type','delivery','details','status','amount')->first();
     
@@ -27,8 +29,9 @@ class StatusController extends Controller
             return redirect()->to('customer/parcel/check')->with('error','No record found with this ID');
         }
         else{
+            $orders = DB::table('orders')->select('id','payment_status')->where('sender_phone', '=',$phone)->get();
             $shipments = Shipment::where('parcel_id', '=',$parcel_id)->select('id','parcel_id','sender_name','sender_phone','sender_address','recipient_name','recipient_phone','recipient_address','zone','created_at','type','delivery','details','status','amount')->get(); 
-        return view('customer.parcel.status',['shipments'=>$shipments]); 
+        return view('customer.parcel.status',['shipments'=>$shipments,'orders'=>$orders]); 
         }
     }
 

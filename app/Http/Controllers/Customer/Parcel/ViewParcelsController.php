@@ -25,11 +25,11 @@ class ViewParcelsController extends Controller
    public function ViewParcel(Request $request){
 
 
-
+    $phone = Auth::guard('customer')->user()->phone;
     $parcel_id = $request->input('parcel_id');
     $shipments = DB::table('shipments')->select('id','parcel_id','sender_address','recipient_name','recipient_phone','recipient_address','zone','notes','created_at','type','delivery','details','status','amount')->where('parcel_id', '=',$parcel_id)->get();
-
-    return view('customer.parcel.view',['shipments'=>$shipments]); 
+    $orders = DB::table('orders')->select('id','payment_status')->where('sender_phone', '=',$phone)->get();
+    return view('customer.parcel.view',['shipments'=>$shipments,'orders'=>$orders]); 
 } 
   
    

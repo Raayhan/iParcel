@@ -145,6 +145,7 @@
                     </div>
             @endif
                 @foreach($shipments as $shipment)
+                @foreach($orders as $order)
                 <div class="card Poppins">
                     <div class="card-header">
                         <div class="row justify-content-center">
@@ -196,7 +197,7 @@
                           <div class="row">
                             
                               
-                                 <span class="h5 raleway">Charge : </span><span class="h5 font-weight-bold mdb-color-text"> &nbsp;{{$shipment->amount}}৳</span>
+                                 <span class="h5 raleway">Charge : </span><span class="h5 font-weight-bold mdb-color-text"> &nbsp;{{$shipment->amount}}৳({{$order->payment_status}})</span>
                               
                             
                            
@@ -213,6 +214,7 @@
 
                     </div>
                 </div>
+                @endforeach
                 @endforeach
 
             </div>

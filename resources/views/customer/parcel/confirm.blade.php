@@ -180,9 +180,14 @@
                       <span class="font-weight-bold"> Zone : </span><span>{{$zone}}</span><br>
                     <span class="font-weight-bold"> Description : </span><span>{{$details}}</span><br>
                     <span class="font-weight-bold"> Type : </span><span>{{$type}}</span><br>
-                    <span class="font-weight-bold"> Delivery : </span><span>{{$delivery}}</span>
+                    
                     <hr>
                     </div>
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <div class="col-md-6">
+                      <span class="h6 raleway"> Delivery : </span><span class="h6 font-weight-bold red-text">{{$delivery}}</span>
                   </div>
                 </div>
                 <div class="row">

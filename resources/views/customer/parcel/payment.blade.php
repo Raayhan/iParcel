@@ -194,8 +194,8 @@
                         
                            <div class="row justify-content-center mb-2">
                              <div class="col-md-4">
-                              
-                              <input type="hidden" name="parcel_id" value="{{$parcel_id}}">
+                                
+                                <input type="hidden" name="parcel_id" value="{{$parcel_id}}">
                                 <input type="hidden" name="sender_name" value="{{$sender_name}}">
                                 <input type="hidden" name="sender_phone" value="{{$sender_phone}}">
                                 <input type="hidden" name="sender_address" value="{{$sender_address}}">
@@ -213,7 +213,7 @@
                                 <input type="hidden" name="balance" value="{{Auth::guard('customer')->user()->balance}}">
                                 <input type="hidden" name="id" value="{{Auth::guard('customer')->user()->id}}">
 
-                              <button type="submit" class="btn btn-unique btn-block">SUBMIT</button>
+                              <button type="submit" name="paid" class="btn btn-unique btn-block">SUBMIT</button>
                              </div>
                              
                              
@@ -221,7 +221,30 @@
                           </form>
                           <div class="row justify-content-center">
                             <div class="col-md-4">
-                              <button type="submit" class="small_btn">Procced without payment <i class="fas fa-sign-out-alt"></i></button>
+                              <form action="/customer/parcel/confirm" method="POST">
+                                @csrf
+                                <input type="hidden" name="trxid" value="N/A">
+                                <input type="hidden" name="bkash_number" value="N/A">
+                                <input type="hidden" name="parcel_id" value="{{$parcel_id}}">
+                                <input type="hidden" name="sender_name" value="{{$sender_name}}">
+                                <input type="hidden" name="sender_phone" value="{{$sender_phone}}">
+                                <input type="hidden" name="sender_address" value="{{$sender_address}}">
+                                <input type="hidden" name="recipient_name" value="{{$recipient_name}}">
+                                <input type="hidden" name="recipient_phone" value="{{$recipient_phone}}">
+                                <input type="hidden" name="recipient_address" value="{{$recipient_address}}">
+                                <input type="hidden" name="zone" value="{{$zone}}">
+                                <input type="hidden" name="type" value="{{$type}}">
+                                <input type="hidden" name="delivery" value="{{$delivery}}">
+                                <input type="hidden" name="details" value="{{$details}}">
+                                <input type="hidden" name="status" value="Requested,Pending Approval">
+                                <input type="hidden" name="notes" value="{{$notes}}">
+                                <input type="hidden" name="payment_status" value="Unpaid">
+                                <input type="hidden" name="amount" value="{{$amount}}">
+                                <input type="hidden" name="due" value="{{Auth::guard('customer')->user()->due}}">
+                                <input type="hidden" name="id" value="{{Auth::guard('customer')->user()->id}}">
+                              <button type="submit" name="unpaid" class="small_btn">Procced without payment <i class="fas fa-sign-out-alt"></i></button>
+                              
+                            </form>
                             </div>
                           </div>
                     

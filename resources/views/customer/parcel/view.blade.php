@@ -152,6 +152,7 @@
                         @endif
                         
                         @foreach($shipments as $shipment)
+                        @foreach($orders as $order)
 
                         <div class="card Poppins mb-4">
                             <div class="card-header small">
@@ -225,7 +226,7 @@
                                 </div>
                                 <div class="row mb-4">
                                     <div class="col-md-6 parcel">
-                                        <span class="font-weight-bold">Status : </span><span style="background-color:#c8e6c9; color:#1b5e20;padding:0.5%;" class="font-weight-bold small">&nbsp;&nbsp; {{$shipment->status}} &nbsp;&nbsp;</span>
+                                        <span class="font-weight-bold">Parcel Status : </span><span style="background-color:#c8e6c9; color:#1b5e20;padding:0.5%;" class="font-weight-bold small">&nbsp;&nbsp; {{$shipment->status}} &nbsp;&nbsp;</span>
                                     </div>
                                     <div class="col-md-6 parcel">
                                         <span class="font-weight-bold raleway">Charge : </span><span class="h5 font-weight-bold mdb-color-text"> &nbsp;{{$shipment->amount}}৳</span>
@@ -234,7 +235,7 @@
                                 </div>
                                 <div class="row mb-4">
                                     <div class="col-md-6">
-                                      
+                                        <span class="font-weight-bold">Payment Status : </span><span style="background-color:#c8e6c9; color:#1b5e20;padding:0.5%;" class="font-weight-bold small">&nbsp;{{$order->payment_status}}&nbsp;</span>
                                        
                                       
                                     </div>
@@ -264,6 +265,7 @@
 
 
 
+                          @endforeach
                           @endforeach
 
 

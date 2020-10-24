@@ -151,6 +151,9 @@ class RequestController extends Controller
 
     public function MakeRequest(Request $request){
 
+
+        if ($request->has('paid')) {
+
         $this->PaymentValidator($request);
         $shipment = new Shipment;
 
@@ -194,7 +197,53 @@ class RequestController extends Controller
 
 
        return redirect()->to('/customer/parcel/all')->with('status','Request has been sent');
+        }
+        if ($request->has('unpaid')) {
+            $shipment = new Shipment;
 
+            $shipment->sender_name    = $request->input('sender_name');
+            $shipment->sender_phone   = $request->input('sender_phone');
+            $shipment->sender_address = $request->input('sender_address');
+    
+            $shipment->recipient_name    = $request->input('recipient_name');
+            $shipment->recipient_phone   = $request->input('recipient_phone');
+            $shipment->recipient_address = $request->input('recipient_address');
+            $shipment->notes             = $request->input('notes');
+    
+    
+            $shipment->parcel_id = $request->input('parcel_id');
+            $shipment->zone      = $request->input('zone');
+            $shipment->delivery  = $request->input('delivery');
+            $shipment->type      = $request->input('type');
+            $shipment->details   = $request->input('details');
+            $shipment->status    = $request->input('status');
+            $shipment->amount    = $request->input('amount');
+    
+           $shipment->save();
+    
+           $order = new Order;
+           $order->parcel_id = $request->input('parcel_id');
+           $order->sender_name = $request->input('sender_name');
+           $order->sender_phone   = $request->input('sender_phone');
+           $order->delivery  = $request->input('delivery');
+           $order->type      = $request->input('type');
+           $order->payment_status = $request->input('payment_status');
+           $order->bkash_number = $request->input('bkash_number');
+           $order->trxid = $request->input('trxid');
+           $order->amount = $request->input('amount');
+           $order->save();
+    
+           $id= $request->input('id');
+           $due = $request->input('due');
+           $customer = Customer::findOrFail($id);
+           $customer->due= ($request->input('amount')+ $due);
+           $customer->save();
+    
+    
+           return redirect()->to('/customer/parcel/all')->with('status','Request has been sent');
+
+
+        }
 
 
 
