@@ -145,12 +145,18 @@
         
                                 {{-- Error Alert --}}
                                 @if(session('error'))
-                                        <div class="alert alert-danger alert-dismissible fade show text-center font-weight-bold small" role="alert">
-                                            {{session('error')}}
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
+                                <div class="row justify-content-center">
+                                  <div class="col-md-4">
+                                    <div class="alert alert-danger alert-dismissible fade show text-center font-weight-bold small" role="alert">
+                                      {{session('error')}}
+                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                      </button>
+                                  </div>
+                                  </div>
+                                </div>
+                                 
+                                
                                 @endif
                       <div class="row justify-content-center mb-4">
                         <h5 class="mdb-color-text"><i class="fas fa-search"></i> Check status of your Parcel</h5>

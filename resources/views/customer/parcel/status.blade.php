@@ -137,12 +137,15 @@
 
             {{-- Error Alert --}}
             @if(session('error'))
-                    <div class="alert alert-danger alert-dismissible fade show text-center font-weight-bold small" role="alert">
-                        {{session('error')}}
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+            <div class="container" style="padding-left:10%;padding-right:10%;">
+              <div class="alert alert-danger alert-dismissible fade show text-center font-weight-bold small" role="alert">
+                {{session('error')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            </div>
+                   
             @endif
                 @foreach($shipments as $shipment)
                 @foreach($orders as $order)
