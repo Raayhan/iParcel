@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('pagetitle', 'Customer Login')
 @section('content')
-<div class="container py-4">
-    <div class="row justify-content-center">
+<div class="container py-4 Poppins">
+    <div class="row justify-content-center" style="padding-top:5%;padding-bottom:5%;">
         <div class="col-md-8">
-            <div class="card Poppins">
-                <div class="card-header text-center login-card"><i class="fas fa-unlock-alt"></i> &nbsp;{{ __('Customer Login') }}</div>
 
-                <div class="card-body" style="padding-top:10%;padding-bottom:10%;">
+                
+
+                
                             {{-- Success Alert --}}
                             @if(session('status'))
                             <div class="alert alert-success alert-dismissible fade show text-center font-weight-bold small" role="alert">
@@ -27,18 +27,20 @@
                                 </button>
                             </div>
                         @endif
-                         <div class="row justify-content-center" style="margin-bottom:8%;">
-                            <i class="fas fa-users fa-3x text-center"></i>
+                         <div class="row justify-content-center" style="margin-bottom:1%;">
+                            <i class=" mdb-color-text fas fa-users fa-3x text-center"></i>
                         </div> 
-                        
+                        <div class="row justify-content-center" style="margin-bottom:5%;">
+                            <h4 class="mdb-color-text">Customer Login</h4>
+                        </div>
                     <form method="POST" action="{{ route($loginRoute) }}">
                         @csrf
                         
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
+                        <div class="form-group row justify-content-center">
+                           
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <div class="col-md-5">
+                                <input placeholder="Email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -48,11 +50,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                        <div class="form-group row justify-content-center">
+                          
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                            <div class="col-md-5">
+                                <input placeholder="Password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -62,8 +64,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
+                        <div class="form-group row justify-content-center">
+                            <div class="col-md-5">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -74,9 +76,9 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-4">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-unique MyButton">
+                        <div class="form-group row mb-4 justify-content-center">
+                            <div class="col-md-5">
+                                <button type="submit" class="btn btn-unique MyButton btn-block">
                                     {{ __('Login') }}
                                 </button>
 
@@ -87,22 +89,23 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group row mb-0">
-                            <div class="col-sm-4 offset-sm-4">
-                              <a class="btn btn-sm text-dark btn-outline-primary waves-effect font-weight-bold" onclick="window.location.href='/auth/google'" ><img src="https://img.icons8.com/color/16/000000/google-logo.png"> &nbsp;&nbsp;Sign in with Google&nbsp;&nbsp;</a> 
+                        <div class="form-group row justify-content-center">
+                            <div class="col-md-5">
+                              <a style="font-size:8px!important;" class="btn btn-sm btn-block text-dark btn-outline-primary waves-effect font-weight-bold" onclick="window.location.href='/auth/google'" ><img src="https://img.icons8.com/color/16/000000/google-logo.png"> &nbsp;&nbsp;Sign in with Google&nbsp;&nbsp;</a> 
                             </div>
+                            
                         </div>
-                        <div class="form-group row">
-                            <div class="col-sm-4 offset-sm-4">
-                                <a class="btn btn-sm text-dark btn-outline-primary waves-effect font-weight-bold" onclick="window.location.href='/auth/linkedin'"><img src=https://img.icons8.com/fluent/16/000000/linkedin.png> &nbsp;&nbsp;Sign in with Linkedin</a> 
+                        <div class="form-group row justify-content-center">
+                            <div class="col-md-5">
+                                <a style="font-size:8px!important;" class="btn btn-sm btn-block text-dark btn-outline-primary waves-effect font-weight-bold" onclick="window.location.href='/auth/linkedin'"><img src=https://img.icons8.com/fluent/16/000000/linkedin.png> &nbsp;&nbsp;Sign in with Linkedin</a> 
                               </div>
                             
                         </div>
                        
                     </form>
                    
-                </div>
-            </div>
+                
+            
         </div>
     </div>
 </div>
