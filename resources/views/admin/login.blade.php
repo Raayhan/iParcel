@@ -1,64 +1,73 @@
 @extends('layouts.app')
 @section('pagetitle', 'Admin Login')
 @section('content')
-<div class="container py-4">
-    
-    <div class="row justify-content-center">
-        
-        <div class="col-md-8">
-            <div class="card Poppins">
-                <div class="card-header text-center login-card"><i class="fas fa-unlock-alt"></i> &nbsp;{{ __('Admin Login') }}</div>
-                <div class="card-body" style="padding-top:10%;padding-bottom:10%;">
-                        {{-- Success Alert --}}
-                        @if(session('status'))
-                           <div class="alert alert-success alert-dismissible fade show text-center font-weight-bold small" role="alert">
-                               {{session('status')}}
-                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                   <span aria-hidden="true">&times;</span>
-                              </button>
+<div class="container py-4 Poppins" >
+    <div class="row justify-content-center" >
+        <div class="col-md-9">
+          
+            
+                <div class="jumbotron" style="padding-top:10%;padding-bottom:10%; background: linear-gradient(190deg, rgba(174,209,238,1) 0%, rgba(233,163,148,0.7847514005602241) 100%);margin-bottom:0px;">
+
+
+                
+                            {{-- Success Alert --}}
+                            @if(session('status'))
+                            <div class="alert alert-success alert-dismissible fade show text-center font-weight-bold small" role="alert">
+                                {{session('status')}}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
                         @endif
 
                         {{-- Error Alert --}}
                         @if(session('error'))
-                             <div class="alert alert-danger alert-dismissible fade show text-center font-weight-bold small" role="alert">
-                                 {{session('error')}}
-                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                     <span aria-hidden="true">&times;</span>
-                                 </button>
-                             </div>
+                            <div class="alert alert-danger alert-dismissible fade show text-center font-weight-bold small" role="alert">
+                                {{session('error')}}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
                         @endif
-                        <div class="row justify-content-center" style="margin-bottom:8%;">
-                            <i class="fas fa-user-secret fa-3x text-center"></i>
+                         <div class="row justify-content-center" style="margin-bottom:1%;">
+                            <i class="mdb-color-text fas fa-user-secret fa-3x text-center"></i>
                         </div> 
+                        <div class="row justify-content-center" style="margin-bottom:5%;">
+                            <h4 class="mdb-color-text">Admin Login</h4>
+                        </div>
                     <form method="POST" action="{{ route($loginRoute) }}">
                         @csrf
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                        
+                        <div class="form-group row justify-content-center">
+                           
 
-                                @if ($errors->has('email'))
+                            <div class="col-md-5">
+                                <input placeholder="Email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                @error('email')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $message }}</strong>
                                     </span>
-                                @endif
+                                @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
-                                @if ($errors->has('password'))
+                        <div class="form-group row justify-content-center">
+                          
+
+                            <div class="col-md-5">
+                                <input placeholder="Password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                @error('password')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong>{{ $message }}</strong>
                                     </span>
-                                @endif
+                                @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
+
+                        <div class="form-group row justify-content-center">
+                            <div class="col-md-5">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -68,17 +77,26 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-unique MyButton">
+
+                        <div class="form-group row mb-4 justify-content-center">
+                            <div class="col-md-5">
+                                <button type="submit" class="btn btn-unique MyButton btn-block">
                                     {{ __('Login') }}
                                 </button>
-                              
+
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link font-weight-bold" href="{{ route('password.request') }}"><small>
+                                        {{ __('Forgot Your Password?') }}</small>
+                                    </a>
+                                @endif
                             </div>
                         </div>
+
+                       
                     </form>
+                   
                 </div>
-            </div>
+                
         </div>
     </div>
 </div>
