@@ -4,15 +4,21 @@
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card Poppins">
-                <div class="card-header text-center login-card"><i class="fas fa-user-plus"></i> &nbsp; {{ __('Customer Register') }}</div>
+            <div class="card Poppins" style="background: linear-gradient(190deg, rgba(174,209,238,1) 0%, rgba(233,163,148,0.7847514005602241) 100%);">
+               
 
                 <div class="card-body">
-                    <div class="alert alert-info alert-dismissible fade show text-center font-weight-bold" role="alert">
+                    <div class="alert alert-warning alert-dismissible fade show text-center font-weight-bold" role="alert">
                         <small>Register facilities available for 'Customer' accounts only.</small>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
+                    </div>
+                    <div class="row justify-content-center" style="margin-bottom:1%; margin-top:5%;">
+                        <i class=" mdb-color-text fas fa-user-plus fa-3x text-center"></i>
+                    </div> 
+                    <div class="row justify-content-center" style="margin-bottom:7%;">
+                        <h4 class="mdb-color-text">Customer Register</h4>
                     </div>
                     <form method="POST" action="{{ route($registerRoute) }}">
                         @csrf

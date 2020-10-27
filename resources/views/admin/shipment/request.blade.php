@@ -174,6 +174,7 @@
 
 
         @foreach($shipments as $shipment)
+      
 
         <div class="card Poppins mb-4">
           <div class="card-header font-weight-bold">
@@ -270,6 +271,7 @@
 
 
         @endforeach
+       
           
 
 
