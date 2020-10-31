@@ -142,7 +142,7 @@
             @yield('content')
         </main>
         <!-- Footer -->
-<footer class="page-footer font-small mdb-color">
+<footer class="page-footer font-small" style="background: linear-gradient(90deg, rgba(7,1,78,1) 0%, rgba(99,5,5,1) 100%)!important;">
 
     <!-- Footer Links -->
     <div class="container">

@@ -179,7 +179,7 @@
             
                                       <td>{{ $shipment->parcel_id }}</td>
                                       <td>{{ $shipment->created_at }}</td>
-                                      <td><span style="background-color:#c8e6c9; color:#1b5e20;padding:0.5%;" class="font-weight-bold small">&nbsp; {{$shipment->status}} &nbsp;</span></td>
+                                      <td><span style="background-color:#c8e6c9; color:#1b5e20;padding:0.5%;" class="font-weight-bold small">{{$shipment->status}}</span></td>
                                       <td>{{ $shipment->recipient_name }}</td>
                                       <td>{{ $shipment->zone }}</td>
                                       <td>{{ $shipment->type }}</td>

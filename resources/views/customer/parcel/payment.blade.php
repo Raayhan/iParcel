@@ -210,6 +210,7 @@
                                 <input type="hidden" name="notes" value="{{$notes}}">
                                 <input type="hidden" name="payment_status" value="Paid">
                                 <input type="hidden" name="amount" value="{{$amount}}">
+                                <input type="hidden" name="customer_shipment" value="{{Auth::guard('customer')->user()->shipments}}">
                                 <input type="hidden" name="balance" value="{{Auth::guard('customer')->user()->balance}}">
                                 <input type="hidden" name="id" value="{{Auth::guard('customer')->user()->id}}">
 

@@ -191,8 +191,10 @@ class RequestController extends Controller
 
        $id= $request->input('id');
        $balance = $request->input('balance');
+       $customer_shipment = $request->input('customer_shipment');
        $customer = Customer::findOrFail($id);
        $customer->balance= ($request->input('amount')+ $balance);
+       $customer->shipments = $customer_shipment+1;
        $customer->save();
 
 
@@ -235,7 +237,9 @@ class RequestController extends Controller
     
            $id= $request->input('id');
            $due = $request->input('due');
+           $customer_shipment = $request->input('customer_shipment');
            $customer = Customer::findOrFail($id);
+           $customer->shipments = $customer_shipment+1;
            $customer->due= ($request->input('amount')+ $due);
            $customer->save();
     
