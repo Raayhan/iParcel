@@ -36,7 +36,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark shadow-sm" style=" color:white!important; background-image: linear-gradient( 109.6deg,  rgba(121,203,202,1) 11.2%, rgba(119,161,211,1) 91.1% );">
             <div class="container">
                 <a class="navbar-brand" href="/"><img class="navbar-brand" src="{{ asset('img/logo.png') }}" alt=""></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -142,7 +142,7 @@
             @yield('content')
         </main>
         <!-- Footer -->
-<footer class="page-footer font-small" style="background: linear-gradient(90deg, rgba(7,1,78,1) 0%, rgba(99,5,5,1) 100%)!important;">
+<footer class="page-footer mdb-color font-small" >
 
     <!-- Footer Links -->
     <div class="container">

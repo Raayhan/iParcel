@@ -6,7 +6,7 @@
         <div class="col-md-9">
           
             
-                <div class="jumbotron" style="padding-top:10%;padding-bottom:10%; background: linear-gradient(190deg, rgba(174,209,238,1) 0%, rgba(233,163,148,0.7847514005602241) 100%);margin-bottom:0px;">
+                <div class="jumbotron" style="padding-top:10%;padding-bottom:10%; margin-bottom:0px;">
 
 
                 
@@ -71,7 +71,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                    <label class="form-check-label" for="remember">
+                                    <label class="form-check-label mdb-color-text" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>
@@ -93,13 +93,13 @@
                         </div>
                         <div class="form-group row justify-content-center">
                             <div class="col-md-5">
-                              <a style="font-size:8px!important;" class="btn btn-sm btn-block text-dark btn-outline-primary waves-effect font-weight-bold" onclick="window.location.href='/auth/google'" ><img src="https://img.icons8.com/color/16/000000/google-logo.png"> &nbsp;&nbsp;Sign in with Google&nbsp;&nbsp;</a> 
+                              <a style="font-size:10px!important;" class="btn btn-sm btn-block btn-blue-grey text-white  waves-effect" onclick="window.location.href='/auth/google'" ><img src="https://img.icons8.com/color/16/000000/google-logo.png"> &nbsp;&nbsp;Sign in with Google&nbsp;&nbsp;</a> 
                             </div>
                             
                         </div>
                         <div class="form-group row justify-content-center">
                             <div class="col-md-5">
-                                <a style="font-size:8px!important;" class="btn btn-sm btn-block text-dark btn-outline-primary waves-effect font-weight-bold" onclick="window.location.href='/auth/linkedin'"><img src=https://img.icons8.com/fluent/16/000000/linkedin.png> &nbsp;&nbsp;Sign in with Linkedin</a> 
+                                <a style="font-size:10px!important;" class="btn btn-sm btn-block  btn-indigo waves-effect" onclick="window.location.href='/auth/linkedin'"><img src=https://img.icons8.com/fluent/16/000000/linkedin.png> &nbsp;&nbsp;Sign in with Linkedin</a> 
                               </div>
                             
                         </div>

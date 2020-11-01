@@ -6,7 +6,7 @@
         <div class="col-md-9">
           
             
-                <div class="jumbotron" style="padding-top:10%;padding-bottom:10%; background: linear-gradient(190deg, rgba(174,209,238,1) 0%, rgba(233,163,148,0.7847514005602241) 100%);margin-bottom:0px;">
+                <div class="jumbotron" style="padding-top:10%;padding-bottom:10%; margin-bottom:0px;">
 
 
                 
