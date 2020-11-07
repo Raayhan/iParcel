@@ -225,43 +225,76 @@
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-6">
+            <div class="row mb-4">
+              <div class="col-md-4">
                 
                    <span class="h5 raleway">Charge : </span><span class="h5 font-weight-bold mdb-color-text"> &nbsp;{{$shipment->amount}}৳</span>
                 
               </div>
-              <div class="col-md-6">
-                <div class="d-flex flex-row-reverse">
-                  <div class="p-6">
-                   <div class="row">
+             
+              <div class="col-md-8">  
                     <form action="/admin/shipment/request"  method="POST">
                       @csrf
-                    <input type="hidden" name="id" value="{{$shipment->id}}">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <select class="form-control  @error('branch') is-invalid @enderror" name="branch" id="branch">
+                          <option class="hidden"  selected disabled>Assign Branch</option>
+                          @foreach($branches as $branch)
+                            <option value="{{$branch->name}}">{{$branch->name}}</option>
+                          @endforeach
+                        </select>
+                        
+                        @error('branch')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                        <input type="hidden" name="id" value="{{$shipment->id}}">
+                      </div>
+                      <div class="col-md-3">
+                        <input type="submit" name="approve" class="btn btn-indigo btn-sm"   value="Approve"/>
+                      </form>
+                      </div>
+                      <div class="col-md-3">
+                        <form action="/admin/shipment/request" method="POST">
+                          @csrf
+                        <input type="hidden" name="id" value="{{$shipment->id}}">
+                         
+    
+    
+    
+                          <input type="submit" name="decline" class="btn btn-mdb-color btn-sm"   value="Decline"/>
+                        </form>
+                    
+                      </div>
+                    </div>
+                    
+                    </div>
+                
+
+                      
+                
+                    
+                    </div>
+              </div>  
                      
-
-
-
-                      <input type="submit" name="approve" class="btn btn-indigo btn-sm"   value="Approve"/>
-                    </form>
-                    <form action="/admin/shipment/request" method="POST">
-                      @csrf
-                    <input type="hidden" name="id" value="{{$shipment->id}}">
-                     
-
-
-
-                      <input type="submit" name="decline" class="btn btn-mdb-color btn-sm"   value="Decline"/>
-                    </form>
-                   </div>
+                    
                    
-                  </div>
-                  
-                </div>
+
+                    <div class="d-flex flex-row-reverse">
+                      <div class="p-6">
+                       <div class="row">            
+                    
+                     
+
+                   
               </div>
+            </div>
+                  
+              
 
               
-            </div>
+           
 
 
           </div>

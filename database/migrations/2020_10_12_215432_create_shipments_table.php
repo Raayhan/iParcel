@@ -23,6 +23,7 @@ class CreateShipmentsTable extends Migration
             $table->text('recipient_phone');
             $table->text('recipient_address');
             $table->text('zone');
+            $table->text('branch')->nullable();;
             $table->string('details');
             $table->string('notes')->nullable();
             $table->string('type');

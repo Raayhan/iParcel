@@ -4,11 +4,11 @@
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card Poppins" >
+            <div class="jumbotron Poppins" >
                
 
                 <div class="card-body">
-                    <div class="alert alert-info alert-dismissible fade show text-center font-weight-bold" role="alert">
+                    <div class="alert alert-danger alert-dismissible fade show text-center font-weight-bold" role="alert">
                         <small>Register facilities available for 'Customer' accounts only.</small>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -108,12 +108,12 @@
                         </div>
                         <div class="form-group row mb-0">
                             <div class="col-sm-4 offset-sm-4">
-                              <a class="btn btn-sm text-dark btn-outline-primary waves-effect font-weight-bold" onclick="window.location.href='/auth/google'" ><img src="https://img.icons8.com/color/16/000000/google-logo.png"> &nbsp;&nbsp;Sign in with Google&nbsp;&nbsp;</a> 
+                              <a style="font-size:8px!important;" class="btn btn-sm text-dark btn-outline-primary waves-effect font-weight-bold" onclick="window.location.href='/auth/google'" ><img src="https://img.icons8.com/color/16/000000/google-logo.png"> &nbsp;&nbsp;Sign in with Google&nbsp;&nbsp;</a> 
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-4 offset-sm-4">
-                                <a class="btn btn-sm text-dark btn-outline-primary waves-effect font-weight-bold" onclick="window.location.href='/auth/linkedin'"><img src=https://img.icons8.com/fluent/16/000000/linkedin.png> &nbsp;&nbsp;Sign in with Linkedin</a> 
+                                <a style="font-size:8px!important;" class="btn btn-sm text-dark btn-outline-primary waves-effect font-weight-bold" onclick="window.location.href='/auth/linkedin'"><img src=https://img.icons8.com/fluent/16/000000/linkedin.png> &nbsp;&nbsp;Sign in with Linkedin</a> 
                               </div>
                             
                         </div>
