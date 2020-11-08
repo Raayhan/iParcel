@@ -236,8 +236,8 @@
                     <form action="/admin/shipment/request"  method="POST">
                       @csrf
                     <div class="row">
-                      <div class="col-md-6">
-                        <select class="form-control  @error('branch') is-invalid @enderror" name="branch" id="branch">
+                      <div class="col-md-6" style="margin-top:6px;">
+                        <select class=" form-control form-control-sm  @error('branch') is-invalid @enderror" name="branch" id="branch">
                           <option class="hidden"  selected disabled>Assign Branch</option>
                           @foreach($branches as $branch)
                             <option value="{{$branch->name}}">{{$branch->name}}</option>
