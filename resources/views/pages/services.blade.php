@@ -4,8 +4,8 @@
 
 
     <div class="container-fluid py-4" style="background:white!important;">
-        <div class="card shadow mb-2 raleway" style=" padding:1%; background-image: radial-gradient( circle 788px at 14.5% 19.3%,  rgba(81,109,179,1) 0%, rgba(178,98,152,1) 100.2% );">
-            <h4 class="h3 text-white text-center" style="padding-top:5px;">iParcel Services</h4>
+        <div class="card shadow mb-2 raleway" style=" padding:1%;">
+            <h4 class="h3 text-center" style="padding-top:5px;">iParcel Services</h4>
         </div>
     
         <div style="padding:5%;" class=" text-center Poppins text-justified"> iParcel is an advanced digital parcel solution system.
@@ -56,6 +56,9 @@
               </div>
         </div>
 
+        <div class="row justify-content-center" style="margin-top:10%;">
+          <div class="h5 font-italic">Thank you for using iParcel</div>
+        </div>
     </div>
           
 

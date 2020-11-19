@@ -130,8 +130,8 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
       //Shipment Routes
       Route::get('/shipment/request',[App\Http\Controllers\Admin\Shipment\RequestController::class,'ShowRequest'])->name('ShowRequest')->middleware('admin');
       Route::post('/shipment/request',[App\Http\Controllers\Admin\Shipment\RequestController::class,'RequestHandel'])->middleware('admin');
-  
-  
+      Route::get('/shipment/live',[App\Http\Controllers\Admin\Shipment\StatusController::class,'ShowPage'])->middleware('admin')->name('ShowStatus');
+      Route::post('/shipment/live',[App\Http\Controllers\Admin\Shipment\StatusController::class,'ViewStatus']);
   
   
   
